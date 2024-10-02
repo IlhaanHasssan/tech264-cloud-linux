@@ -75,7 +75,7 @@
        - Offers a platform allowing developers to build, deploy, and manage applications without dealing with the underlying infrastructure eg: Microsoft Azure App Service
   - ###### ***SaaS***👩🏾‍💻
       -  Delivers software applications over the internet on a subscription basis, accessible via a web browser eg: Microsoft 365, Google Workspace
-- ##### What are differences? 
+- ##### What are the differences? 
     - ###### Control:
       - ***IaaS***: Users manage operating systems, applications, and middleware.
       - ***PaaS***: Users manage applications and data, while the provider handles the infrastructure.
