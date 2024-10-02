@@ -16,11 +16,9 @@ Key features:
 - Multi-user and multi-tasking
 - Strong security and stability
 
-It is a clone of Unix OS. It has much of the same feel as its original counterparts. There are many various distributions of Linux including Ubuntu.
+## Linux Commands👩🏾‍💻:
 
-## Linux Commands:
-
-### File and Directory:
+### File and Directory🗃️:
 - **`ls`** – Lists files and directories in the current directory.
 - Example: **`ls -l`** (shows detailed info like file ownership, permissions, size, etc.) This is valuable information as managing file ownership protects sensitive data from unauthorised access. 
 
@@ -50,7 +48,7 @@ It is a clone of Unix OS. It has much of the same feel as its original counterpa
 - Example:**` rm file.txt `**(removes file.txt)
 - Example: **`rm -r directory`** (removes directory and its contents)
   
-### Viewing and Editing Files:
+### Viewing and Editing Files📝:
 - **`cat`** – Displays the contents of a file.
   - Example: `cat file.txt` or `cat /etc/shells`
 
@@ -70,7 +68,7 @@ It is a clone of Unix OS. It has much of the same feel as its original counterpa
 - **`file`** - type checks a file
   - Example: `file cat.jpg` will show that file is a `.jpg` file.
 
-### Permissions and Ownership:
+### Permissions and Ownership🔐:
 - **`chmod`** – Changes file permissions.
   - Example: `-rwxr-xr-- 1 tcboony staff  123 Nov 25 18:36 keeprunning.sh` 
   - (sets read, write, execute for the owner, and read, execute for group and others)
@@ -118,7 +116,7 @@ chmod g-w testfile.txt
 - **`whoami`** – prints admin username.
   - Example: `whoami` output = `useradmin`
 
-### System Information:
+### System Information🖇️:
 - **`uname -a`** – Displays system information (kernel version, system architecture, etc.).
 
 - **`df`** – Shows disk space usage.
@@ -136,7 +134,7 @@ chmod g-w testfile.txt
 - **`cat /etc/shells`** – prints what shells are running on your system.
 - **`sudo`** - this gives user access to "superuser" permissions. 
 
-### Networking:
+### Networking🛜:
 - **`ifconfig`** or **`ip a`** – Displays network interface information.
 
 - **`ping`** – Sends ICMP echo requests to test connectivity.
@@ -149,7 +147,7 @@ chmod g-w testfile.txt
   - Example: `scp file.txt user@remote:/path/to/destination`
 - **`history`** –Shows entire bash command history for your VM 
 
-### Package Management (for Ubuntu/Debian systems):
+### Package Management (for Ubuntu/Debian systems)📦:
 - **`apt update`** – Updates package lists from repositories.
 
 - **`apt upgrade`** – Installs available package updates.
@@ -160,7 +158,7 @@ chmod g-w testfile.txt
 - **`apt remove`** – Uninstalls a package.
   - Example: `apt remove package_name`
 
-### Others:
+### Others🚧:
 - **`echo`** – Prints text to the terminal.
   - Example: `echo "Hello, world!"`
 
@@ -170,11 +168,11 @@ chmod g-w testfile.txt
 - **`exit`** – Logs out of a terminal session or closes the shell.
 
 - **`clear`** – Clears the terminal screen.
+- **`curl`** - used to transfer data to/from a server using various protocols (HHTP, HTTPS, FTP etc)
+  - Example: `curl https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg -O cat.jpg`
+- **`wget`** - used to download files from the internet, also using various protocols.
+  - Example: `wget https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg -O cat2.jpg`
 
 
-#### What is a stream?
-  - A stream is a continuous flow of data that can be read from or written to. Streams are used to transfer data between programs, files, and devices. They are fundamental to the way Linux handles input and output operations.
-    - ***standard input*** **`stdin`**:  This is the default source of input for a program. It typically comes from the keyboard.
-File Descriptor: 0
-Example: When you type a command in the terminal, the input is read from stdin.
+
 
