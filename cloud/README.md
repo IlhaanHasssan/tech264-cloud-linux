@@ -187,6 +187,7 @@ However, organizations should evaluate their unique requirements, budget, and ex
 5. **Additional Services**: Costs for managed services, databases, machine learning tools, and security features.
 
 6. **Support Plans**: Fees for premium support or technical assistance from the cloud provider.
+7.  **Data Egress**: You will be required to pay for any data going out of your network.
 
 #### What are the 4 pillars of DevOps? How do they link into the Cloud? 
 
