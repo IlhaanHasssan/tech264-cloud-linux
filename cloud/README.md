@@ -54,17 +54,17 @@
 
 
 #### The 4 deployment models of cloud: 
-- - ###### ***private*** 
+- - ###### ***private*** 🔏
     - Infrastructure is dedicated to a single organization, providing enhanced security and control.
     - Resources are either hosted on-premises or by a third party, ensuring exclusive access and customizable solutions.
 
-- - ###### ***public*** 
+- - ###### ***public*** 📢
     - Services are offered over the public internet and shared among multiple organizations.
     - Users access resources hosted on the cloud provider's infrastructure (e.g., AWS, Azure), paying for what they use.
-- - ###### ***hybrid*** 
+- - ###### ***hybrid*** 🔗
     - Combines public and private clouds, allowing data and applications to be shared between them.
     -  Organizations can keep sensitive data in a private cloud while using the public cloud for less critical workloads, enabling flexibility and scalability.
- - - ###### ***multi-cloud*** 
+ - - ###### ***multi-cloud*** 🤹🏾‍♀️
       - Multicloud refers to the use of services from multiple cloud providers (public or private) within a single architecture.
       - Organizations adopt multicloud strategies to avoid vendor lock-in, optimize performance, and enhance redundancy by leveraging the strengths of different cloud providers.
 
