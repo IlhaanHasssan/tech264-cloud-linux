@@ -1,12 +1,13 @@
-# SSH Key Generation and Usage
-- [SSH Key Generation and Usage](#ssh-key-generation-and-usage)
-  - [Steps to Create an SSH Key](#steps-to-create-an-ssh-key)
-  - [Add your SSH key to Azure portal](#add-your-ssh-key-to-azure-portal)
+# ***SSH KEYS***
+- [***SSH KEYS***](#ssh-keys)
+- [***SSH Key Generation and Usage***](#ssh-key-generation-and-usage)
+  - [***Steps to Create an SSH Key***](#steps-to-create-an-ssh-key)
+  - [***Add your SSH key to Azure portal***](#add-your-ssh-key-to-azure-portal)
 
-
+# ***SSH Key Generation and Usage***
 This guide outlines the steps to create and manage SSH keys, as well as how to add the public key to the Azure portal.
 
-## Steps to Create an SSH Key
+## ***Steps to Create an SSH Key***
 
 1. Navigate to the Home Directory:
 - Open a terminal or command line and cd into home directory
@@ -41,7 +42,7 @@ Your public key has been saved in /Users/<your_home_directory>/.ssh/tech264-ilha
 11.   To print the content of your public key to the terminal **`cat tech264-ilhaan-az-key.pub`** *Ensure it is your PUBLIC key which is the file ending in **`.pub`**
     
 
-## Add your SSH key to Azure portal
+## ***Add your SSH key to Azure portal***
 
 1.  Log in to your Azure Portal (using Sparta Global credentials)
 2.  Type ***"SSH Keys"*** into search bar

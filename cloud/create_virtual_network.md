@@ -1,16 +1,17 @@
-# Creating a virtual network
-- [Creating a virtual network](#creating-a-virtual-network)
-  - [What does a VNet do?](#what-does-a-vnet-do)
-      - [Our Virtual Network Guide:](#our-virtual-network-guide)
-      - [Create Subnets](#create-subnets)
+# ***VIRTUAL NETWORK***
+- [***VIRTUAL NETWORK***](#virtual-network)
+- [***Creating a virtual network***](#creating-a-virtual-network)
+  - [***What does a VNet do?***](#what-does-a-vnet-do)
+      - [***Our Virtual Network Guide:***](#our-virtual-network-guide)
+      - [***Create Subnets***](#create-subnets)
         - [Private Subnet Configuration:](#private-subnet-configuration)
         - [Public Subnet Configuration:](#public-subnet-configuration)
 
-
-## What does a VNet do?
+# ***Creating a virtual network***
+## ***What does a VNet do?***
  A Virtual Network (VNet) in Azure allows you to securely connect and isolate resources within your cloud environment. 
  
-#### Our Virtual Network Guide:
+#### ***Our Virtual Network Guide:***
 
 
 1. Log in to the Azure Portal. Go to Azure Portal and log in with your Azure credentials.
@@ -23,12 +24,12 @@ Navigate to Virtual Networks
 - Resource Group: Choose an existing resource group ***tech264***
 - Name: Enter a name for your VNet ***tech264-ilhaan-vnet***
 - Region: Choose the region where you want to deploy the VNet. ***UK South***
-- - Create your tag:
+-  Create your tag:
     - key:value = owner:Ilhaan
 - IP Addresses Tab: Address Space: Enter ***10.0.0.0/16.*** This gives you a total of 65,536 IP addresses to work with.
 - Review + Create.  Verify your configurations and click "Create" to provision the virtual network.
 
-#### Create Subnets
+#### ***Create Subnets***
 1. Select your Virtual Network
 
 2. After the VNet is created, navigate to it in the Azure portal.
