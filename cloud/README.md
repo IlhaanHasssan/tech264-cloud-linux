@@ -69,11 +69,11 @@
       - Organizations adopt multicloud strategies to avoid vendor lock-in, optimize performance, and enhance redundancy by leveraging the strengths of different cloud providers.
 
 #### Types of cloud services: 
-   - ###### ***IaaS*** 
+   - ###### ***IaaS*** 🚧
      -   Provides virtualized computing resources over the internet, including servers, storage, and networking eg: AWS EC2.
-   - ###### ***PaaS***
+   - ###### ***PaaS***🚉
        - Offers a platform allowing developers to build, deploy, and manage applications without dealing with the underlying infrastructure eg: Microsoft Azure App Service
-  - ###### ***SaaS***
+  - ###### ***SaaS***👩🏾‍💻
       -  Delivers software applications over the internet on a subscription basis, accessible via a web browser eg: Microsoft 365, Google Workspace
 - ##### What are differences? 
     - ###### Control:
