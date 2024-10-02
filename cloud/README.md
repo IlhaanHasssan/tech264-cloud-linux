@@ -24,7 +24,7 @@
 ## The term "cloud" in cloud computing refers to a network of remote servers hosted on the internet, rather than on a local server or personal computer.
  
 #### How do we know if something is in the cloud? 
-- You can tell something is in the cloud if it is accessed over the internet, stored remotely on servers rather than on local devices, and is available on-demand from anywhere, typically through a web interface or app.
+- You can tell something is in the cloud if it is accessed over the internet, stored remotely on servers rather than on local devices, and is available on-demand from anywhere, typically through a web interface or app. It is centrally managed.
 
 #### Differences between on-prem and the cloud? 
 ###### Location:
