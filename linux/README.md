@@ -210,7 +210,7 @@ chmod g-w testfile.txt
 - `kill -1 <process_ID>` very gently hangs up 
 - `kill` is moderately harsh way to end a process
 - `kill -9 pid` if you bruteforce kill a parent process then you will leave the child processes running in the port, this is called a zombie process
-- 
+  
 
 
 

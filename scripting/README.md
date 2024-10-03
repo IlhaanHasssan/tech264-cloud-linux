@@ -14,8 +14,8 @@
       - [What is sys.argv?](#what-is-sysargv)
       - [How Does It Work?](#how-does-it-work)
       - [What Happens:](#what-happens)
-  - [Writing our first script:📜](#writing-our-first-script)
       - [Summary](#summary)
+  - [Writing our first script:📜](#writing-our-first-script)
 
 ## Scripting vs Programming 🖥️
 ### Similarities🤞:
@@ -88,6 +88,12 @@ To run a python script in the command line:
 python <file_name> arg1 arg2
 ```
 
+#### Summary
+ - sys.argv is a list that contains the name of the script and any arguments you pass to it.
+- Indexing: sys.argv[0] is always the script name, and subsequent indices contain the arguments.
+- This allows your script to take input from the command line, making it more flexible and interactive!
+
+
 ## Writing our first script:📜
 - Always test your commands manually first.
 - `nano provision.sh` - to create a new file called provision.sh
@@ -107,8 +113,3 @@ python <file_name> arg1 arg2
 - `chmod +x provision.sh` - add execute permissions to your file
 - `./provision.sh` - to execute your script
 
-
-#### Summary
- - sys.argv is a list that contains the name of the script and any arguments you pass to it.
-- Indexing: sys.argv[0] is always the script name, and subsequent indices contain the arguments.
-- This allows your script to take input from the command line, making it more flexible and interactive!
