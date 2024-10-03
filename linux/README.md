@@ -134,7 +134,7 @@ chmod g-w testfile.txt
 - **`piping`** – uses `|` character to direct the output of one command to the input of another. 
   - Example: `ps aux | grep "apache" | sort -k 3 -r > apache_processes.txt`
 - **`cat /etc/shells`** – prints what shells are running on your system.
-- **`sudo`** - this gives user access to "superuser" permissions.
+- **`sudo`** - this gives user access to "superuser do" permissions.
   - Example: `sudo su` to log in as a root user. 
 
 ### Networking🛜:
@@ -153,11 +153,15 @@ chmod g-w testfile.txt
 
 ### Package Management (for Ubuntu/Debian systems)📦:
 - **`apt update`** – Updates package lists from repositories.
+  - Example: `sudo apt update -y` 
 
 - **`apt upgrade`** – Installs available package updates.
+  - Example: - `sudo apt upgrade -y`. This could potentially break your OS when all packages are upgraded at the same time due to incompatible dependencies, overwriting config files, bugs and conflicts within packages.
+    - `apt`: advanced package tool manages software packages on Debian-based systems (like Ubuntu).
+    - `-y` - skipping confirmation prompts can lead to negative results as you don't know what you're getting yourself into.
 
 - **`apt install`** – Installs new software packages.
-  - Example: `apt install git`
+  - Example: `apt install tree`
 
 - **`apt remove`** – Uninstalls a package.
   - Example: `apt remove package_name`

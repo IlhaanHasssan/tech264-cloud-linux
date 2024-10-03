@@ -20,6 +20,7 @@
     - [Tags:](#tags)
     - [Review and Create:](#review-and-create)
 - [***How to connect your VM via SSH:***](#how-to-connect-your-vm-via-ssh)
+    - [Via CLI](#via-cli)
 # ***What is a virtual machine?***
    - A virtual machine (VM) is essentially a computer within a computer. It’s a software-based simulation of a physical computer that runs an operating system (OS) and applications just like a physical computer does
 
@@ -91,7 +92,7 @@
 1. Make sure all your details are correct.
 
 # ***How to connect your VM via SSH:***
-
+###  Via CLI
    1. **Start** your virtual machine.
    2. Navigate to "Connect" under your VM.
    3. Find "Native SSH" and **select** it. A side panel should open.

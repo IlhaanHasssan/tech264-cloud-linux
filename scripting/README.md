@@ -10,7 +10,7 @@
       - [Execution](#execution)
       - [Development Cycle](#development-cycle)
       - [Learning Curve](#learning-curve)
-  - [Running Python Scripts in the CLI:](#running-python-scripts-in-the-cli)
+  - [Running Python Scripts in the CLI:🐍](#running-python-scripts-in-the-cli)
       - [What is sys.argv?](#what-is-sysargv)
       - [How Does It Work?](#how-does-it-work)
       - [What Happens:](#what-happens)
@@ -43,7 +43,7 @@
     - Scripting: Tends to have a gentler learning curve, making it accessible for beginners. Many scripting languages are designed to be user-friendly and intuitive.
     - Programming: Can have a steeper learning curve due to the need to understand more complex concepts, algorithms, and data structures.
 
-## Running Python Scripts in the CLI:
+## Running Python Scripts in the CLI:🐍
 
 
 #### What is sys.argv?
@@ -60,13 +60,13 @@ When You Run a Script:
 
 The sys.argv list will contain the script name and the arguments you provided.
 
-In the example above:
+- In the example above:
 
-sys.argv[0] will be 'my_script.py' (the name of your script).
+  - sys.argv[0] will be 'my_script.py' (the name of your script).
 
-sys.argv[1] will be 'arg1' (the first argument).
+  - sys.argv[1] will be 'arg1' (the first argument).
 
-sys.argv[2] will be 'arg2' (the second argument).
+  - sys.argv[2] will be 'arg2' (the second argument).
   
 
 ```python 
@@ -91,8 +91,3 @@ python <file_name> arg1 arg2
  - sys.argv is a list that contains the name of the script and any arguments you pass to it.
 - Indexing: sys.argv[0] is always the script name, and subsequent indices contain the arguments.
 - This allows your script to take input from the command line, making it more flexible and interactive!
-
-
-
-
-[def]: #complexity
