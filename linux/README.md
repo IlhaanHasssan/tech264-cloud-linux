@@ -132,7 +132,8 @@ chmod g-w testfile.txt
 - **`piping`** – uses `|` character to direct the output of one command to the input of another. 
   - Example: `ps aux | grep "apache" | sort -k 3 -r > apache_processes.txt`
 - **`cat /etc/shells`** – prints what shells are running on your system.
-- **`sudo`** - this gives user access to "superuser" permissions. 
+- **`sudo`** - this gives user access to "superuser" permissions.
+  - Example: `sudo su` to log in as a root user. 
 
 ### Networking🛜:
 - **`ifconfig`** or **`ip a`** – Displays network interface information.
@@ -146,6 +147,7 @@ chmod g-w testfile.txt
 - **`scp`** – Securely copies files between hosts.
   - Example: `scp file.txt user@remote:/path/to/destination`
 - **`history`** –Shows entire bash command history for your VM 
+  - Example: `history -c` will clear your entire history
 
 ### Package Management (for Ubuntu/Debian systems)📦:
 - **`apt update`** – Updates package lists from repositories.
