@@ -1,7 +1,7 @@
 # ***LINUX***
 - [***LINUX***](#linux)
-- [What is Linux?](#what-is-linux)
-  - [Linux Commands👩🏾‍💻:](#linux-commands)
+- [***What is Linux?***](#what-is-linux)
+  - [***Linux Commands👩🏾‍💻:***](#linux-commands)
     - [File and Directory🗃️:](#file-and-directory️)
     - [Viewing and Editing Files📝:](#viewing-and-editing-files)
     - [Permissions and Ownership🔐:](#permissions-and-ownership)
@@ -9,8 +9,10 @@
     - [Networking🛜:](#networking)
     - [Package Management (for Ubuntu/Debian systems)📦:](#package-management-for-ubuntudebian-systems)
     - [Others🚧:](#others)
+  - [***Environment Variables***](#environment-variables)
+    - [***Commands***](#commands)
 
-# What is Linux?
+# ***What is Linux?***
   - Linux is an open-source, Unix-like operating system (OS) that manages hardware and software resources on a computer. It is widely used for its stability, security, and flexibility, especially in servers, desktops, and embedded systems. Linux is known for being customizable and is distributed through various versions called "distributions" or "distros" (e.g., Ubuntu, Fedora, CentOS).
 
 Key features:
@@ -18,7 +20,7 @@ Key features:
 - Multi-user and multi-tasking
 - Strong security and stability
 
-## Linux Commands👩🏾‍💻:
+## ***Linux Commands👩🏾‍💻:***
 
 ### File and Directory🗃️:
 - **`ls`** – Lists files and directories in the current directory.
@@ -180,6 +182,35 @@ chmod g-w testfile.txt
   - Example: `curl https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg -O cat.jpg`
 - **`wget`** - used to download files from the internet, also using various protocols.
   - Example: `wget https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg -O cat2.jpg`
+
+## ***Environment Variables***
+- Environment variables are key-value pairs stored in the operating system that are used to configure the environment in which programs run. They can hold information like paths to executables, configuration settings, and sensitive data (like API keys or credentials). Programs and scripts can access these variables to influence their behavior.
+### ***Commands***
+- `VARIABLENAME=data` to set a new variable
+- `echo $VARIABLENAME` to print the data in a variable
+- `export MYNAME=Ilhaan` creates an environment variable, will disappear when you log out as it is not persistent
+- `printenv VARIABLENAME` prints the list of existing env variables
+- `nano .bashrc`  to make the env variable persistent, it must be saved in this file
+- `echo "export MYNAME=Ilhaan" >> .bashrc`  places the command in quotes into the `.bashrc` file, `>>` appends whatever is in the quotes to the end of the file
+- `>` will replace whatever was in the file previously with whatever is in the quotes
+- `ps -A, -e` shows all user and system processes
+  - `shift + M` using most memory
+  - `top`using most CPU
+  - shift P most processing power
+  - shift N -newest
+- `sleep <num>`
+  - `sleep 5000 &` runs a 5000 second sleep process in the background, output = `[2] 2267` which is the Process ID
+- `&` makes a command run in the background and gives it a PID
+- `&&` two commands at the same time
+- `jobs` shows running processes in current shell session
+  - `jobs -l` shows state of processes
+    - background
+    - foreground
+    - stopped
+- `kill -1 <process_ID>` very gently hangs up 
+- `kill` is moderately harsh way to end a process
+- `kill -9 pid` if you bruteforce kill a parent process then you will leave the child processes running in the port, this is called a zombie process
+- 
 
 
 

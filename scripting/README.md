@@ -2,7 +2,7 @@
 
 (use shift + ctrl + P to create 'Table of Contents')
 - [Scripting](#scripting)
-  - [Scripting vs Programming](#scripting-vs-programming)
+  - [Scripting vs Programming 🖥️](#scripting-vs-programming-️)
     - [Similarities🤞:](#similarities)
     - [Differences✌️:](#differences️)
       - [Complexity](#complexity)
@@ -14,9 +14,10 @@
       - [What is sys.argv?](#what-is-sysargv)
       - [How Does It Work?](#how-does-it-work)
       - [What Happens:](#what-happens)
+  - [Writing our first script:📜](#writing-our-first-script)
       - [Summary](#summary)
 
-## Scripting vs Programming
+## Scripting vs Programming 🖥️
 ### Similarities🤞:
    - Both involve writing code to solve problems and can share similar syntax and concepts across languages.
    - Both can be used in various contexts, such as web development, data processing, and system automation.
@@ -86,6 +87,26 @@ To run a python script in the command line:
 ```python   
 python <file_name> arg1 arg2
 ```
+
+## Writing our first script:📜
+- Always test your commands manually first.
+- `nano provision.sh` - to create a new file called provision.sh
+  - `#!/bin/bash` - shows location of bash script required to run commands (called "shabang").
+- updates packages
+  - `sudo apt update -y`
+- upgrades packages
+  - `sudo apt upgrade -y`
+- install nginx - webserver
+  - `sudo apt install nginx -y`
+  - `sudo systemctl status nginx` - checks if nginx is running.
+  - copy your IP address from your VM, check that it works when accessing through HTTP
+- restart nginx
+  - `sudo systemctl restart nginx`
+- enable nginx - going to automatically start when VM starts
+  - `sudo systemctl enable nginx`
+- `chmod +x provision.sh` - add execute permissions to your file
+- `./provision.sh` - to execute your script
+
 
 #### Summary
  - sys.argv is a list that contains the name of the script and any arguments you pass to it.
