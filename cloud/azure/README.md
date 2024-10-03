@@ -14,9 +14,12 @@ Azure is Microsoft’s cloud computing platform that provides a wide range of se
 ### Azure Regions and Availability Zones 🗺️
 - **Regions**: Azure is divided into geographic regions, each containing one or more data centers. This allows users to deploy resources closer to their end users for better performance.
 - **Availability Zones**: These are physically separate locations within a region that provide high availability and resilience. Each zone has independent power, cooling, and networking.
+- Azure Front Door
+Azure Front Door has 192 edge locations in 109 metro cities, plus 4 edge locations in 4 Azure US Government cloud regions.
 
-![Azure Regions and Availability Zones Diagram](https://holori.com/list-of-all-azure-regions-and/)
-![alt text](image.png)
+[Azure Regions and Availability Zones](https://holori.com/list-of-all-azure-regions-and/)
+
+![alt text](azure-regions-map.png)
 
 ### How is Azure Structured/Organised? 📊
 Azure is organized into several key components:
