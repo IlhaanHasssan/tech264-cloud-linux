@@ -9,8 +9,8 @@
     - [Networking🛜:](#networking)
     - [Package Management (for Ubuntu/Debian systems)📦:](#package-management-for-ubuntudebian-systems)
     - [Others🚧:](#others)
-  - [***Environment Variables***](#environment-variables)
-    - [***Commands***](#commands)
+  - [***Environment Variables*** 🌳](#environment-variables-)
+    - [***Commands*** 💬](#commands-)
 
 # ***What is Linux?***
   - Linux is an open-source, Unix-like operating system (OS) that manages hardware and software resources on a computer. It is widely used for its stability, security, and flexibility, especially in servers, desktops, and embedded systems. Linux is known for being customizable and is distributed through various versions called "distributions" or "distros" (e.g., Ubuntu, Fedora, CentOS).
@@ -183,9 +183,9 @@ chmod g-w testfile.txt
 - **`wget`** - used to download files from the internet, also using various protocols.
   - Example: `wget https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg -O cat2.jpg`
 
-## ***Environment Variables***
+## ***Environment Variables*** 🌳
 - Environment variables are key-value pairs stored in the operating system that are used to configure the environment in which programs run. They can hold information like paths to executables, configuration settings, and sensitive data (like API keys or credentials). Programs and scripts can access these variables to influence their behavior.
-### ***Commands***
+### ***Commands*** 💬
 - `VARIABLENAME=data` to set a new variable
 - `echo $VARIABLENAME` to print the data in a variable
 - `export MYNAME=Ilhaan` creates an environment variable, will disappear when you log out as it is not persistent
