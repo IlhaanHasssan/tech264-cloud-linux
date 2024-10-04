@@ -1,6 +1,6 @@
 # ***LINUX***
 - [***LINUX***](#linux)
-- [***What is Linux?***](#what-is-linux)
+- [***What is Linux? 💭***](#what-is-linux-)
   - [***Linux Commands👩🏾‍💻:***](#linux-commands)
     - [File and Directory🗃️:](#file-and-directory️)
     - [Viewing and Editing Files📝:](#viewing-and-editing-files)
@@ -12,7 +12,7 @@
   - [***Environment Variables*** 🌳](#environment-variables-)
     - [***Commands*** 💬](#commands-)
 
-# ***What is Linux?***
+# ***What is Linux? 💭***
   - Linux is an open-source, Unix-like operating system (OS) that manages hardware and software resources on a computer. It is widely used for its stability, security, and flexibility, especially in servers, desktops, and embedded systems. Linux is known for being customizable and is distributed through various versions called "distributions" or "distros" (e.g., Ubuntu, Fedora, CentOS).
 
 Key features:
