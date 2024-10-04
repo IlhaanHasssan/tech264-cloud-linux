@@ -81,7 +81,7 @@ Key features:
     - Others: r-- (read)
     - Owner of a file does not immediately receive `x` or execute permissions initially to reduce the risk of running potentially harmful scripts or binaries on accident.
  1. **What numeric values are assigned to each permission?**
-   - Read = 4, Write = 2, Execute = 1
+   - Read = 4, Write = 2, Execute = 1, No permission = 0
 
 2. **What can you with the values assign read + write permissions?**
    - Add Read (4) + Write (2) = 6

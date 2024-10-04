@@ -16,6 +16,7 @@
       - [What Happens:](#what-happens)
       - [Summary](#summary)
   - [Writing our first script:📜](#writing-our-first-script)
+  - [Ubuntu Pro 22.04 Gen 2 Script:](#ubuntu-pro-2204-gen-2-script)
 
 ## Scripting vs Programming 🖥️
 ### Similarities🤞:
@@ -95,7 +96,7 @@ python <file_name> arg1 arg2
 
 
 ## Writing our first script:📜
-- Always test your commands manually first.
+- Always test your commands manually first to ensure no user input is required.
 - `nano provision.sh` - to create a new file called provision.sh
   - `#!/bin/bash` - shows location of bash script required to run commands (called "shabang").
 - updates packages
@@ -112,4 +113,29 @@ python <file_name> arg1 arg2
   - `sudo systemctl enable nginx`
 - `chmod +x provision.sh` - add execute permissions to your file
 - `./provision.sh` - to execute your script
+
+## Ubuntu Pro 22.04 Gen 2 Script:
+ ```bash
+ #!/bin/bash
+
+echo  update sources list
+sudo apt-get update -y
+echo Done!
+
+echo upgrade any packages available...
+sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
+echo Done!
+
+echo install nginx...
+sudo DEBIAN_FRONTEND=noninteractive apt-get install nginx -y
+
+echo install nodejs v20...
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
+echo Done!
+
+echo check nodejs version....
+node -v
+```
+
 

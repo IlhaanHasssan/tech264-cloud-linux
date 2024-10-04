@@ -1,7 +1,7 @@
 # ***VIRTUAL MACHINE***
 - [***VIRTUAL MACHINE***](#virtual-machine)
-- [***What is a virtual machine?***](#what-is-a-virtual-machine)
-- [***Architecture of a virtual machine?***](#architecture-of-a-virtual-machine)
+- [***What is a virtual machine?*** 💭](#what-is-a-virtual-machine-)
+- [***Architecture of a virtual machine?*** 🏛️](#architecture-of-a-virtual-machine-️)
     - [1. **Region**](#1-region)
     - [2. **Resource Group**](#2-resource-group)
     - [3. **Virtual Network (VNet)**](#3-virtual-network-vnet)
@@ -13,18 +13,20 @@
     - [9. **Network Security Group (NSG)**](#9-network-security-group-nsg)
     - [10. **NSG Rules**](#10-nsg-rules)
     - [11. **SSH Key**](#11-ssh-key)
-- [***How to create a VM in Azure:***](#how-to-create-a-vm-in-azure)
+- [***How to create a VM in Azure:*** 🎨](#how-to-create-a-vm-in-azure-)
     - [Basics:](#basics)
     - [Disks:](#disks)
     - [Networking:](#networking)
     - [Tags:](#tags)
     - [Review and Create:](#review-and-create)
-- [***How to connect your VM via SSH:***](#how-to-connect-your-vm-via-ssh)
+- [***How to connect your VM via SSH:*** 🔗](#how-to-connect-your-vm-via-ssh-)
     - [Via CLI](#via-cli)
-# ***What is a virtual machine?***
+- [***Deleting Your Virtual Machine***🗑️](#deleting-your-virtual-machine️)
+- [***How to add a port*** ➕](#how-to-add-a-port-)
+# ***What is a virtual machine?*** 💭 
    - A virtual machine (VM) is essentially a computer within a computer. It’s a software-based simulation of a physical computer that runs an operating system (OS) and applications just like a physical computer does
 
-# ***Architecture of a virtual machine?***
+# ***Architecture of a virtual machine?*** 🏛️
 
 
 
@@ -61,7 +63,7 @@
 ### 11. **SSH Key**
    - A secure way to authenticate to the virtual machine. SSH keys are used to log into a Linux-based VM securely without using a password, enhancing security through public-private key encryption.
 
-# ***How to create a VM in Azure:***
+# ***How to create a VM in Azure:*** 🎨
 ### Basics: 
 1. **log in** to Azure Portal via https://portal.azure.com/#home
 1. **Search** for Virtual Machine on the Azure Portal. Create a new VM.
@@ -91,7 +93,7 @@
 ### Review and Create:
 1. Make sure all your details are correct.
 
-# ***How to connect your VM via SSH:***
+# ***How to connect your VM via SSH:*** 🔗
 ###  Via CLI
    1. **Start** your virtual machine.
    2. Navigate to "Connect" under your VM.
@@ -101,3 +103,27 @@
    6. Paste this code into your **GitBash**.
    7. A **warning** will come out once entered into your **GitBash**. Respond with `yes` and then it will permanently save the IP address, meaning we will not be given the warning again.
    8. You can type `exit` to **logout** of the Virtual Machine.
+
+
+# ***Deleting Your Virtual Machine***🗑️
+1. Navigate to overview.
+2. Find your resource group.
+3. Filter your name. You will see multiple items appear.
+4. Tick `resourcegroupname-name-vmname`
+5. Tick `resourcegroupname-vmname-ip`
+6. Tick `resourcegroupname-vmname-nsg`
+7. Tick `resourcegroupname-name-networkinterface`
+8. Tick `resourcegroupname-name-Disk`
+9. Locate **delete**. Avoid deleting the **resource group**.
+10. Tick "Apply force delete" just to be safe.
+11. Enter "delete" in the input box and click **delete**.
+12. Select **delete** once more to confirm **deletion**.
+ 
+We leave the Virtual Network and SSH Key as they can be reused.
+
+# ***How to add a port*** ➕
+1. Navigate to your VM's **network settings**.
+2. Open up **Settings** and click **inbound security rules**.
+3. Change the **destination port** to `3000`.
+4. Change protocol to **TCP**.
+5. Change the priority. The **lower** the priority, the **higher** the priority.
