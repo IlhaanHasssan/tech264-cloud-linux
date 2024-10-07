@@ -118,8 +118,7 @@
 10. Tick "Apply force delete" just to be safe.
 11. Enter "delete" in the input box and click **delete**.
 12. Select **delete** once more to confirm **deletion**.
- 
-We leave the Virtual Network and SSH Key as they can be reused.
+ - We leave the Virtual Network and SSH Key as they can be reused.
 
 # ***How to add a port*** ➕
 1. Navigate to your VM's **network settings**.

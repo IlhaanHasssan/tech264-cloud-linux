@@ -17,6 +17,7 @@
       - [Summary](#summary)
   - [Writing our first script:📜](#writing-our-first-script)
   - [Ubuntu Pro 22.04 Gen 2 Script:](#ubuntu-pro-2204-gen-2-script)
+    - [Installing MongoDB and running our DB:](#installing-mongodb-and-running-our-db)
 
 ## Scripting vs Programming 🖥️
 ### Similarities🤞:
@@ -137,5 +138,60 @@ echo Done!
 echo check nodejs version....
 node -v
 ```
+
+
+### Installing MongoDB and running our DB:
+```bash
+sudo apt-get install gnupg curl
+#installs gnupg for encyrption and signature verification
+#intalls curl for data transfers over various protocols
+
+curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
+# downloads MongoDB's GPG public key, converts it to binary format, and stores it in the system keyring. The GPG key is used to verify the integrity and authenticity of MongoDB packages when they are downloaded and installed from repositories.
+
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+#adds the MongoDB repository to your system’s package manager (apt) configuration, allowing you to install MongoDB 7.0. The repository URL and associated GPG key are specified, ensuring the integrity and security of downloaded packages.
+
+sudo apt-get update -y
+#updates all packages
+
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y mongodb-org=7.0.6 mongodb-org-database=7.0.6 mongodb-org-server=7.0.6 mongodb-mongosh=2.1.5 mongodb-org-mongos=7.0.6 mongodb-org-tools=7.0.6
+#This command installs MongoDB version 7.0.6 and related tools while ensuring that no prompts interrupt the process (using the DEBIAN_FRONTEND=noninteractive variable). This is often used in automation scripts or when you need to install MongoDB in a non-interactive environment, like a container or CI/CD pipeline.
+
+sudo systemctl mongod start
+#starts the MongoDB database server (the mongod service). This ensures that the MongoDB server begins running and can start accepting connections or database operations.
+
+sudo systemctl mongod status
+# checks the current status of the MongoDB server service (mongod). This will provide information such as whether the service is active (running), inactive, or failed, along with additional details like the process ID and any recent log messages related to the service.
+
+sudo nano /etc/mongo.conf
+  - change BindIP to 0.0.0.0
+#opens the MongoDB configuration file for editing. Changing BindIP to 0.0.0.0 allows MongoDB to accept connections from all IP addresses, which can be useful but poses security risks if not managed correctly.
+
+sudo systemctl mongod restart
+#effectively stops and then starts the MongoDB server service, allowing any configuration changes to take effect and helping troubleshoot or reset the service as needed.
+
+sudo systemctl is-enabled mongod
+#is useful for determining whether the MongoDB service is configured to start automatically when the system boots. This can help administrators ensure that the database is always available after a restart or system update.
+
+sudo systemctl enable mongod
+# configures the MongoDB service to start automatically at boot time. This is an important step for ensuring that your MongoDB server is always available when the system is running.
+
+Turn on your app vm and connect using SSH in a new GitBash window
+
+export DB_HOST=mongodb://10.0.3.4:27017/posts
+#sets an environment variable DB_HOST that stores the connection string to a MongoDB instance. This allows applications to connect to the specified database easily and consistently.
+
+printenv DB_HOST
+#prints the value inside variable DB_HOST
+
+npm install
+#used to install the dependencies listed in the package.json file of a Node.js project.
+
+npm start
+#It runs the script defined in the start property of the scripts section in package.json. If no start script is defined, it will default to running node server.js (if server.js exists).
+
+```
+
 
 
