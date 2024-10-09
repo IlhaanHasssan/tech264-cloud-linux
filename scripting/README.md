@@ -197,7 +197,6 @@ npm start
 
 ```
 
-
 ## Item potentcy 🧪
   - When your script reaches the desired state no matter how many times it runs
 
