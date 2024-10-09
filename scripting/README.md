@@ -16,12 +16,12 @@
       - [What Happens:](#what-happens)
       - [Summary](#summary)
   - [Writing our first script:📜](#writing-our-first-script)
-  - [Ubuntu Pro 22.04 Gen 2 Script:](#ubuntu-pro-2204-gen-2-script)
-    - [Installing MongoDB and running our DB:](#installing-mongodb-and-running-our-db)
-  - [Item potentcy](#item-potentcy)
-  - [Manual reverse proxy](#manual-reverse-proxy)
-  - [Creating a script for new  App VM:](#creating-a-script-for-new--app-vm)
-  - [Creating a script for new DB VM:](#creating-a-script-for-new-db-vm)
+  - [Ubuntu Pro 22.04 Gen 2 Script:📜](#ubuntu-pro-2204-gen-2-script)
+    - [Installing MongoDB and running our DB:📅](#installing-mongodb-and-running-our-db)
+  - [Item potentcy 🧪](#item-potentcy-)
+  - [Manual reverse proxy 🔀](#manual-reverse-proxy-)
+  - [Creating a script for new  App VM:📜](#creating-a-script-for-new--app-vm)
+  - [Creating a script for new DB VM:📜](#creating-a-script-for-new-db-vm)
 
 ## Scripting vs Programming 🖥️
 ### Similarities🤞:
@@ -119,7 +119,7 @@ python <file_name> arg1 arg2
 - `chmod +x provision.sh` - add execute permissions to your file
 - `./provision.sh` - to execute your script
 
-## Ubuntu Pro 22.04 Gen 2 Script:
+## Ubuntu Pro 22.04 Gen 2 Script:📜
  ```bash
  #!/bin/bash
 
@@ -144,7 +144,7 @@ node -v
 ```
 
 
-### Installing MongoDB and running our DB:
+### Installing MongoDB and running our DB:📅
 ```bash
 sudo apt-get install gnupg curl
 #installs gnupg for encyrption and signature verification
@@ -198,126 +198,25 @@ npm start
 ```
 
 
-## Item potentcy
+## Item potentcy 🧪
   - When your script reaches the desired state no matter how many times it runs
 
-## Manual reverse proxy
-
+## Manual reverse proxy 🔀
+- create a backup of the file you want change:
 - `sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak`
-  
+ -  nano into the file:
 - `sudo nano /etc/nginx/sites-available/default`
+- check if the config syntax is correct:
 - `sudo nginx -t`
-     
+- creates a link to the localhost:3000
      `proxy_pass http://localhost:3000;`
-  
+- restart nginx to include new changes 
 - `sudo systemctl restart nginx`
 
-## Creating a script for new  App VM:
+## Creating a script for new  App VM:📜
 
-  ```bash script
-#!/bin/bash
+[APP SCRIPT](./prov-app.sh)
 
-# Defining environment variable
-echo "Defining environment variable..."
-export DB_HOST=mongodb://10.0.3.4:27017/posts
-echo "Done!"
+## Creating a script for new DB VM:📜
 
-# Update sources list
-echo "Updating sources list..."
-sudo apt-get update -y
-echo "Done!"
-
-# Upgrade any packages available
-echo "Upgrading installed packages..."
-sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
-echo "Done!"
-
-# Install Nginx
-echo "Installing Nginx..."
-sudo DEBIAN_FRONTEND=noninteractive apt-get install nginx -y
-echo "Done!"
-
-# Install Node.js v20
-echo "Installing Node.js v20..."
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && \
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
-echo "Done!"
-
-# Check Node.js version
-echo "Checking Node.js version..."
-node -v
-echo "Done!"
-
-# Cloning GitHub repository
-echo "Cloning GitHub repository..."
-git clone https://github.com/AdonisAlgos/tech264-sparta-app.git
-echo "Done!"
-
-# Changing directories to the app folder
-echo "Changing directories to the app folder..."
-cd ~/tech264-sparta-app/app
-echo "Done!"
-
-# Installing app packages and dependencies
-echo "Installing app packages and dependencies..."
-npm install
-echo "Done!"
-
-node app.js &
-```
-
-## Creating a script for new DB VM:
-```bash script
-#!/bin/bash
-
-# Update the system package list
-echo "Updating package list..."
-sudo apt-get update -y
-echo "Done!"
-
-# Upgrade all installed packages to their latest versions
-echo "Upgrading installed packages..."
-sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
-echo "Done!"
-
-# Install gnupg and curl
-echo "Installing gnupg and curl..."
-sudo apt-get install gnupg curl -y
-echo "Done!"
-
-# Download and add MongoDB GPG key for package verification
-echo "Adding MongoDB GPG key..."
-sudo rm -f /usr/share/keyrings/mongodb-server-7.0.gpg  # Remove key if one exists
-curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg --yes -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
-echo "Done!"
-
-# Add MongoDB repository to the sources list
-echo "Adding MongoDB repository to sources list..."
-echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
-echo "Done!"
-
-# Update package list again to include the newly added MongoDB repository
-echo "Updating package list with MongoDB repository..."
-sudo apt-get update -y
-echo "Done!"
-
-# Install MongoDB version 7.0.6 and specific associated packages non-interactively
-echo "Installing MongoDB and related packages..."
-sudo apt-get install -y mongodb-org=7.0.6 mongodb-org-database=7.0.6 mongodb-org-server=7.0.6 mongodb-org-shell=7.0.6 mongodb-org-mongos=7.0.6 mongodb-org-tools=7.0.6
-echo "Done!"
-
-# Enable MongoDB service to start on boot
-echo "Enabling MongoDB service to start on boot..."
-sudo systemctl enable mongod
-echo "Done!"
-
-# Modify MongoDB configuration to allow remote connections
-echo "Configuring MongoDB to allow remote connections..."
-sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
-echo "Done!"
-
-# Restart MongoDB service to apply configurations
-echo "Restarting MongoDB service..."
-sudo systemctl start mongod
-echo "Done!"
-```
+[DB SCRIPT](./dbscript.sh)
