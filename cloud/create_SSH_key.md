@@ -3,6 +3,14 @@
 - [***SSH Key Generation and Usage***](#ssh-key-generation-and-usage)
   - [***Steps to Create an SSH Key***](#steps-to-create-an-ssh-key)
   - [***Add your SSH key to Azure portal***](#add-your-ssh-key-to-azure-portal)
+  - [**Monolith vs Two-Tier Architecture**](#monolith-vs-two-tier-architecture)
+    - [***Monolith***](#monolith)
+      - [***Pros:***](#pros)
+      - [***Cons:***](#cons)
+    - [***Two-tier***](#two-tier)
+      - [***Pros:***](#pros-1)
+        - [***Cons:***](#cons-1)
+  - [**Security Settings for SSH Key in Azure Portal**\*](#security-settings-for-ssh-key-in-azure-portal)
 
 # ***SSH Key Generation and Usage***
 This guide outlines the steps to create and manage SSH keys, as well as how to add the public key to the Azure portal.
@@ -50,3 +58,39 @@ Your public key has been saved in /Users/<your_home_directory>/.ssh/tech264-ilha
 4.  Paste your long SSH key(output of **`cat`** command) from the terminal into the SSH key box in Azure
 5.  Ensure you have selected the correct resource group, location and formation eg: 
    ***'tech264', UK South, RSA***
+
+
+## **Monolith vs Two-Tier Architecture**
+### ***Monolith***
+- User unterface --> business logic --> data access layer --> database
+- Everything was on one machine,even the database was not seperate
+#### ***Pros:***
+- Low latency
+- Works well for smaller apps
+- Single code base means it could be easier to deploy
+- can be simpler to try to secure one machine
+#### ***Cons:***
+- security concers as data and code are hekd in te same machine, so if your server goes down then your entire app goes down
+- lack of scalability
+- slow to start up
+- gets complicated to add new features
+
+### ***Two-tier***
+App tier 
+Database Tier 
+- on seperate machines
+#### ***Pros:***
+-
+##### ***Cons:***
+-
+
+
+## **Security Settings for SSH Key in Azure Portal***
+- You don't want just anyone attempting to SSH into your machine.
+- Your PublicIP will change if you switch off your Wi-Fi router so you will have to reset.
+1. Log into Azure Portal
+2. Find your VM's netwrok security group
+3. Find your inbound port rules
+4. change SSH source from "Any" to "My IP Address"
+- Organisations usually use Bastion servers in production
+- In a low-use production server, you can deny access to avoid security risks. 
