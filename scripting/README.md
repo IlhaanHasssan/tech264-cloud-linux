@@ -19,7 +19,6 @@
   - [Ubuntu Pro 22.04 Gen 2 Script:📜](#ubuntu-pro-2204-gen-2-script)
     - [Installing MongoDB and running our DB:📅](#installing-mongodb-and-running-our-db)
   - [Item potentcy 🧪](#item-potentcy-)
-  - [Manual reverse proxy 🔀](#manual-reverse-proxy-)
   - [Creating a script for new  App VM:📜](#creating-a-script-for-new--app-vm)
   - [Creating a script for new DB VM:📜](#creating-a-script-for-new-db-vm)
 
@@ -199,18 +198,6 @@ npm start
 
 ## Item potentcy 🧪
   - When your script reaches the desired state no matter how many times it runs
-
-## Manual reverse proxy 🔀
-- create a backup of the file you want change:
-- `sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak`
- -  nano into the file:
-- `sudo nano /etc/nginx/sites-available/default`
-- check if the config syntax is correct:
-- `sudo nginx -t`
-- creates a link to the localhost:3000
-     `proxy_pass http://localhost:3000;`
-- restart nginx to include new changes 
-- `sudo systemctl restart nginx`
 
 ## Creating a script for new  App VM:📜
 
