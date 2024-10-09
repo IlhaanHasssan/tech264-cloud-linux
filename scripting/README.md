@@ -18,6 +18,10 @@
   - [Writing our first script:📜](#writing-our-first-script)
   - [Ubuntu Pro 22.04 Gen 2 Script:](#ubuntu-pro-2204-gen-2-script)
     - [Installing MongoDB and running our DB:](#installing-mongodb-and-running-our-db)
+  - [Item potentcy](#item-potentcy)
+  - [Manual reverse proxy](#manual-reverse-proxy)
+  - [Creating a script for new  App VM:](#creating-a-script-for-new--app-vm)
+  - [Creating a script for new DB VM:](#creating-a-script-for-new-db-vm)
 
 ## Scripting vs Programming 🖥️
 ### Similarities🤞:
@@ -158,17 +162,17 @@ sudo apt-get update -y
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y mongodb-org=7.0.6 mongodb-org-database=7.0.6 mongodb-org-server=7.0.6 mongodb-mongosh=2.1.5 mongodb-org-mongos=7.0.6 mongodb-org-tools=7.0.6
 #This command installs MongoDB version 7.0.6 and related tools while ensuring that no prompts interrupt the process (using the DEBIAN_FRONTEND=noninteractive variable). This is often used in automation scripts or when you need to install MongoDB in a non-interactive environment, like a container or CI/CD pipeline.
 
-sudo systemctl mongod start
+sudo systemctl start mongod
 #starts the MongoDB database server (the mongod service). This ensures that the MongoDB server begins running and can start accepting connections or database operations.
 
-sudo systemctl mongod status
+sudo systemctl status mongod
 # checks the current status of the MongoDB server service (mongod). This will provide information such as whether the service is active (running), inactive, or failed, along with additional details like the process ID and any recent log messages related to the service.
 
 sudo nano /etc/mongo.conf
   - change BindIP to 0.0.0.0
 #opens the MongoDB configuration file for editing. Changing BindIP to 0.0.0.0 allows MongoDB to accept connections from all IP addresses, which can be useful but poses security risks if not managed correctly.
 
-sudo systemctl mongod restart
+sudo systemctl restart mongod
 #effectively stops and then starts the MongoDB server service, allowing any configuration changes to take effect and helping troubleshoot or reset the service as needed.
 
 sudo systemctl is-enabled mongod
@@ -179,7 +183,7 @@ sudo systemctl enable mongod
 
 Turn on your app vm and connect using SSH in a new GitBash window
 
-export DB_HOST=mongodb://10.0.3.4:27017/posts
+export DB_HOST=mongodb://10.0.3.5:27017/posts
 #sets an environment variable DB_HOST that stores the connection string to a MongoDB instance. This allows applications to connect to the specified database easily and consistently.
 
 printenv DB_HOST
@@ -194,4 +198,126 @@ npm start
 ```
 
 
+## Item potentcy
+  - When your script reaches the desired state no matter how many times it runs
 
+## Manual reverse proxy
+
+- `sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak`
+  
+- `sudo nano /etc/nginx/sites-available/default`
+- `sudo nginx -t`
+     
+     `proxy_pass http://localhost:3000;`
+  
+- `sudo systemctl restart nginx`
+
+## Creating a script for new  App VM:
+
+  ```bash script
+#!/bin/bash
+
+# Defining environment variable
+echo "Defining environment variable..."
+export DB_HOST=mongodb://10.0.3.4:27017/posts
+echo "Done!"
+
+# Update sources list
+echo "Updating sources list..."
+sudo apt-get update -y
+echo "Done!"
+
+# Upgrade any packages available
+echo "Upgrading installed packages..."
+sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
+echo "Done!"
+
+# Install Nginx
+echo "Installing Nginx..."
+sudo DEBIAN_FRONTEND=noninteractive apt-get install nginx -y
+echo "Done!"
+
+# Install Node.js v20
+echo "Installing Node.js v20..."
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && \
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
+echo "Done!"
+
+# Check Node.js version
+echo "Checking Node.js version..."
+node -v
+echo "Done!"
+
+# Cloning GitHub repository
+echo "Cloning GitHub repository..."
+git clone https://github.com/AdonisAlgos/tech264-sparta-app.git
+echo "Done!"
+
+# Changing directories to the app folder
+echo "Changing directories to the app folder..."
+cd ~/tech264-sparta-app/app
+echo "Done!"
+
+# Installing app packages and dependencies
+echo "Installing app packages and dependencies..."
+npm install
+echo "Done!"
+
+node app.js &
+```
+
+## Creating a script for new DB VM:
+```bash script
+#!/bin/bash
+
+# Update the system package list
+echo "Updating package list..."
+sudo apt-get update -y
+echo "Done!"
+
+# Upgrade all installed packages to their latest versions
+echo "Upgrading installed packages..."
+sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
+echo "Done!"
+
+# Install gnupg and curl
+echo "Installing gnupg and curl..."
+sudo apt-get install gnupg curl -y
+echo "Done!"
+
+# Download and add MongoDB GPG key for package verification
+echo "Adding MongoDB GPG key..."
+sudo rm -f /usr/share/keyrings/mongodb-server-7.0.gpg  # Remove key if one exists
+curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg --yes -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
+echo "Done!"
+
+# Add MongoDB repository to the sources list
+echo "Adding MongoDB repository to sources list..."
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+echo "Done!"
+
+# Update package list again to include the newly added MongoDB repository
+echo "Updating package list with MongoDB repository..."
+sudo apt-get update -y
+echo "Done!"
+
+# Install MongoDB version 7.0.6 and specific associated packages non-interactively
+echo "Installing MongoDB and related packages..."
+sudo apt-get install -y mongodb-org=7.0.6 mongodb-org-database=7.0.6 mongodb-org-server=7.0.6 mongodb-org-shell=7.0.6 mongodb-org-mongos=7.0.6 mongodb-org-tools=7.0.6
+echo "Done!"
+
+# Enable MongoDB service to start on boot
+echo "Enabling MongoDB service to start on boot..."
+sudo systemctl enable mongod
+echo "Done!"
+
+# Modify MongoDB configuration to allow remote connections
+echo "Configuring MongoDB to allow remote connections..."
+sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
+echo "Done!"
+
+# Restart MongoDB service to apply configurations
+echo "Restarting MongoDB service..."
+sudo systemctl start mongod
+echo "Done!"
+```
