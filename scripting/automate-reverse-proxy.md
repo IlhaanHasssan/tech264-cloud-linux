@@ -10,11 +10,13 @@
 ```bash
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 ```
-3. Use sed to Add or Modify the Configuration: Append or modify the necessary configuration for the reverse proxy.
+3. Use **`sed`** to Add or Modify the Configuration: Append or modify the necessary configuration for the reverse proxy.
 ```bash
-# Append the reverse proxy configuration to the server block
-sudo sed -i '/server_name _;/a \    location / {\n        proxy_pass http://localhost:3000;\n    }' /etc/nginx/sites-available/default
+#Append the reverse proxy configuration to the server block
+sudo sed -i 's|try_files $uri $uri/ =404;|proxy_pass http://localhost:3000;|' /etc/nginx/sites-available/default
 ```
-4. Restart Nginx: Restart the Nginx service to apply changes.
-
-    `sudo systemctl restart nginx`
+1. Check if the config file has a correct syntax using:
+    - **`sudo nginx -t`** 
+2. Restart Nginx: Restart the Nginx service to apply changes.
+   - **`sudo systemctl restart nginx`**
+  

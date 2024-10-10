@@ -15,7 +15,7 @@ if ! grep -q "proxy_pass" /etc/nginx/sites-available/default; then
     echo "Configuring Nginx reverse proxy..."
     
     # Append the reverse proxy configuration to the server block
-    sudo sed -i '/server_name _;/a \    location / {\n        proxy_pass http://localhost:3000;\n    }' /etc/nginx/sites-available/default
+    sudo sed -i 's|try_files $uri $uri/ =404;|proxy_pass http://localhost:3000;|' /etc/nginx/sites-available/default
 
     echo "Reverse proxy configuration added."
 else

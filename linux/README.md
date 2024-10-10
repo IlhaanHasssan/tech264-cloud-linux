@@ -11,6 +11,7 @@
     - [Others🚧:](#others)
   - [***Environment Variables*** 🌳](#environment-variables-)
     - [***Commands*** 💬](#commands-)
+  - [](#)
 
 # ***What is Linux? 💭***
   - Linux is an open-source, Unix-like operating system (OS) that manages hardware and software resources on a computer. It is widely used for its stability, security, and flexibility, especially in servers, desktops, and embedded systems. Linux is known for being customizable and is distributed through various versions called "distributions" or "distros" (e.g., Ubuntu, Fedora, CentOS).
@@ -182,6 +183,7 @@ chmod g-w testfile.txt
   - Example: `curl https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg -O cat.jpg`
 - **`wget`** - used to download files from the internet, also using various protocols.
   - Example: `wget https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg -O cat2.jpg`
+- **`tee`** - a utility that reads from standard input and writes to standard output and one or more files simultaneously. When you use **`sudo`** with **`tee`**, it allows you to write to a file that requires elevated privileges.
 
 ## ***Environment Variables*** 🌳
 - Environment variables are key-value pairs stored in the operating system that are used to configure the environment in which programs run. They can hold information like paths to executables, configuration settings, and sensitive data (like API keys or credentials). Programs and scripts can access these variables to influence their behavior.
@@ -193,6 +195,7 @@ chmod g-w testfile.txt
 - `nano .bashrc`  to make the env variable persistent, it must be saved in this file
 - `echo "export MYNAME=Ilhaan" >> .bashrc`  places the command in quotes into the `.bashrc` file, `>>` appends whatever is in the quotes to the end of the file
 - `>` will replace whatever was in the file previously with whatever is in the quotes
+- To avoid having to SSH out then back in to reload the .bashrc file, you can use the `source .bashrc` file and this will do it for you!
 - `ps -A, -e` shows all user and system processes
   - `shift + M` using most memory
   - `top`using most CPU
@@ -210,6 +213,8 @@ chmod g-w testfile.txt
 - `kill -1 <process_ID>` very gently hangs up 
 - `kill` is moderately harsh way to end a process
 - `kill -9 pid` if you bruteforce kill a parent process then you will leave the child processes running in the port, this is called a zombie process
+
+## 
   
 
 

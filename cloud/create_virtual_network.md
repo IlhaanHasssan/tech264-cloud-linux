@@ -38,7 +38,7 @@ Navigate to Virtual Networks
 4. Click on "+ Subnet" above the IP address box to add a new subnet.
 ##### Private Subnet Configuration:
 
-- Name: Enter tech264-ilhaan-2-subnet-vnet-private.
+- Name: Enter ***tech264-ilhaan-2-subnet-vnet-private***.
 - Address range(CIDR Block): Enter 10.0.3.0/24. This allows for 256 addresses in this subnet.
 - Click "Add" to create the private subnet.
   

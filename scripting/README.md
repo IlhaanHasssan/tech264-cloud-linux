@@ -206,3 +206,5 @@ npm start
 ## Creating a script for new DB VM:📜
 
 [DB SCRIPT](./dbscript.sh)
+
+  - You can use `sudo cat /var/log/cloud-init-output.log` to check log output for the script when you run it from user data

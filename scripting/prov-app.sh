@@ -1,26 +1,23 @@
 #!/bin/bash
 
-# Update sources list
+# Update Linux sources list
 echo "Updating sources list..."
 sudo apt-get update -y
-echo "Done!"
+echo "Done updating packages!"
 
 # Upgrade any packages available
 echo "Upgrading installed packages..."
 sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
-echo "Done!"
-
-#Install pm2
-sudo npm install pm2 -g
-echo PM2 installed!
+echo "Done upgrading packages!"
 
 # Install Nginx
 echo "Installing Nginx..."
 sudo DEBIAN_FRONTEND=noninteractive apt-get install nginx -y
-echo "Done!"
+echo "Done installing nginx!"
 
 # creates a basic configuration for Nginx to listen on port 80 and forward requests to the application running on port 3000.
-sudo sed -i '/server_name _;/a \    location / {\n        proxy_pass http://localhost:3000;\n    }' /etc/nginx/sites-available/default
+sudo sed -i 's|try_files $uri $uri/ =404;|proxy_pass http://localhost:3000;|' /etc/nginx/sites-available/default
+
 
 # Test Nginx configuration for syntax errors
 echo "Testing Nginx configuration..."
@@ -38,45 +35,45 @@ echo "Nginx reverse proxy setup is complete."
 echo "Installing Node.js v20..."
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && \
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
-echo "Done!"
+echo "Done installing node js!"
 
 # Check Node.js version
 echo "Checking Node.js version..."
 node -v
-echo "Done!"
+echo "Done checking node version!"
 
 # Defining environment variable
 echo "Defining environment variable..."
 export DB_HOST=mongodb://10.0.3.4:27017/posts
-echo "Done!"
+printenv DB_HOST
+echo "Done defining env variable!"
 
 
 # Cloning GitHub repository
 echo "Cloning GitHub repository..."
 git clone https://github.com/IlhaanHasssan/tech264-sparta-app.git repo
-echo "Done!"
+echo "Done cloning GitHub!"
 
 # Changing directories to the app folder
 echo "Changing directories to the app folder..."
 cd repo/app
-echo "Done!"
+echo "Done changing directories into app!"
+
+# Install PM2 globally
+echo "Installing PM2..."
+npm install -g pm2
+echo "Done PM2 install!"
 
 # Installing app packages and dependencies
 echo "Installing app packages and dependencies..."
 npm install
-echo "Done!"
+echo "Done NPM install!"
 
 echo Running the app with PM2...
 pm2 stop all  # Stops any previously running processes
 pm2 start app.js --name "app"
-echo Done!
-
-echo "Setting up PM2 to auto-restart on system reboot..."
-pm2 startup systemd
-sudo env PATH=$PATH:/usr/bin pm2 startup systemd -u $USER --hp /home/$USER
-pm2 save
-echo "PM2 is configured to start on boot and auto-restart the app."
-
+echo Done running app with PM2!
+#checks 
 pm2 list
 
 # Finished
