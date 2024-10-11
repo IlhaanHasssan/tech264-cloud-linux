@@ -1,68 +1,70 @@
-# Scripting
+# ***Scripting***
 
 (use shift + ctrl + P to create 'Table of Contents')
-- [Scripting](#scripting)
-  - [Scripting vs Programming 🖥️](#scripting-vs-programming-️)
-    - [Similarities🤞:](#similarities)
-    - [Differences✌️:](#differences️)
-      - [Complexity](#complexity)
-      - [Purpose/Intent](#purposeintent)
-      - [Execution](#execution)
-      - [Development Cycle](#development-cycle)
-      - [Learning Curve](#learning-curve)
-  - [Running Python Scripts in the CLI:🐍](#running-python-scripts-in-the-cli)
-      - [What is sys.argv?](#what-is-sysargv)
-      - [How Does It Work?](#how-does-it-work)
-      - [What Happens:](#what-happens)
-      - [Summary](#summary)
-  - [Writing our first script:📜](#writing-our-first-script)
-  - [Ubuntu Pro 22.04 Gen 2 Script:📜](#ubuntu-pro-2204-gen-2-script)
-    - [Installing MongoDB and running our DB:📅](#installing-mongodb-and-running-our-db)
-  - [Item potentcy 🧪](#item-potentcy-)
-  - [Creating a script for new  App VM:📜](#creating-a-script-for-new--app-vm)
-  - [Creating a script for new DB VM:📜](#creating-a-script-for-new-db-vm)
+- [***Scripting***](#scripting)
+  - [***Scripting vs Programming*** 🖥️](#scripting-vs-programming-️)
+    - [***Similarities***🤞:](#similarities)
+    - [***Differences***✌️:](#differences️)
+      - [***Complexity***](#complexity)
+      - [***Purpose/Intent***](#purposeintent)
+      - [***Execution***](#execution)
+      - [***Development Cycle***](#development-cycle)
+      - [***Learning Curve***](#learning-curve)
+  - [***Running Python Scripts in the CLI:*** 🐍](#running-python-scripts-in-the-cli-)
+      - [***What is sys.argv?***](#what-is-sysargv)
+      - [***How Does It Work?***](#how-does-it-work)
+      - [***What Happens:***](#what-happens)
+      - [***Summary***](#summary)
+  - [***Writing our first script:*** 📜](#writing-our-first-script-)
+  - [***Ubuntu Pro 22.04 Gen 2 Script:*** 📜](#ubuntu-pro-2204-gen-2-script-)
+    - [***Installing MongoDB and running our DB:*** 📅](#installing-mongodb-and-running-our-db-)
+  - [***Item potentcy*** 🧪](#item-potentcy-)
+  - [***Creating a script for new  App VM:*** 📜](#creating-a-script-for-new--app-vm-)
+  - [***Creating a script for new DB VM:*** 📜](#creating-a-script-for-new-db-vm-)
+  - [***Virtual Machines and Images***](#virtual-machines-and-images)
+  - [***How to connect the VM app after you stop it and start again - using  SSH key***](#how-to-connect-the-vm-app-after-you-stop-it-and-start-again---using--ssh-key)
 
-## Scripting vs Programming 🖥️
-### Similarities🤞:
+## ***Scripting vs Programming*** 🖥️
+### ***Similarities***🤞:
    - Both involve writing code to solve problems and can share similar syntax and concepts across languages.
    - Both can be used in various contexts, such as web development, data processing, and system automation.
    - Many languages blur the lines between scripting and programming, allowing for both simple and complex applications.
    - 
-### Differences✌️:
+### ***Differences***✌️:
 
 - Scripting is a type of programming so they often overlap, though they differ in meaning and application.
   
-  #### Complexity
+  #### ***Complexity***
     - Scripting: Generally involves simpler logic and is often focused on specific tasks. Scripts can be short and straightforward.
     - Programming: Typically requires more intricate logic, data structures, and algorithms. It often involves handling larger codebases and architecture.
-  #### Purpose/Intent
+  #### ***Purpose/Intent***
     - Scripting: Primarily used for automating tasks, manipulating files, config management and controlling applications. Often aims for quick solutions.
     - Programming: Designed for creating larger, more complex software applications or systems that may involve multiple components and user interfaces.
-  #### Execution
+  #### ***Execution***
     - Scripting: Usually interpreted, meaning code is executed line by line at runtime, which can allow for rapid testing and debugging.
     - Programming: Often compiled into machine code before execution, leading to optimized performance but potentially longer development times.
-  #### Development Cycle
+  #### ***Development Cycle***
     - Scripting: Often involves shorter development cycles. Scripts can be written and tested quickly, allowing for rapid iteration.
     - Programming: Usually involves longer development cycles, including phases like planning, design, implementation, testing, and deployment. More extensive testing and debugging may be required.
 
-  #### Learning Curve
+  #### ***Learning Curve***
     - Scripting: Tends to have a gentler learning curve, making it accessible for beginners. Many scripting languages are designed to be user-friendly and intuitive.
     - Programming: Can have a steeper learning curve due to the need to understand more complex concepts, algorithms, and data structures.
 
-## Running Python Scripts in the CLI:🐍
+## ***Running Python Scripts in the CLI:*** 🐍
 
 
-#### What is sys.argv?
+#### ***What is sys.argv?***
 ```sys``` Module: This is a built-in module in Python that provides access to some variables used or maintained by the Python interpreter. To use it, you need to import it with import sys.
 
 ```argv```: This stands for "argument vector." It is a list that contains the command-line arguments passed to the script.
 
-#### How Does It Work?
+#### ***How Does It Work?***
 When You Run a Script:
 
  - When you execute a Python script from the command line, you can pass additional information (arguments) along with the script name.
 
-#### What Happens:
+#### ***What Happens:***
 
 The sys.argv list will contain the script name and the arguments you provided.
 
@@ -93,13 +95,13 @@ To run a python script in the command line:
 python <file_name> arg1 arg2
 ```
 
-#### Summary
+#### ***Summary***
  - sys.argv is a list that contains the name of the script and any arguments you pass to it.
 - Indexing: sys.argv[0] is always the script name, and subsequent indices contain the arguments.
 - This allows your script to take input from the command line, making it more flexible and interactive!
 
 
-## Writing our first script:📜
+## ***Writing our first script:*** 📜
 - Always test your commands manually first to ensure no user input is required.
 - `nano provision.sh` - to create a new file called provision.sh
   - `#!/bin/bash` - shows location of bash script required to run commands (called "shabang").
@@ -118,7 +120,7 @@ python <file_name> arg1 arg2
 - `chmod +x provision.sh` - add execute permissions to your file
 - `./provision.sh` - to execute your script
 
-## Ubuntu Pro 22.04 Gen 2 Script:📜
+## ***Ubuntu Pro 22.04 Gen 2 Script:*** 📜
  ```bash
  #!/bin/bash
 
@@ -143,7 +145,7 @@ node -v
 ```
 
 
-### Installing MongoDB and running our DB:📅
+### ***Installing MongoDB and running our DB:*** 📅
 ```bash
 sudo apt-get install gnupg curl
 #installs gnupg for encyrption and signature verification
@@ -196,15 +198,27 @@ npm start
 
 ```
 
-## Item potentcy 🧪
+## ***Item potentcy*** 🧪
   - When your script reaches the desired state no matter how many times it runs
 
-## Creating a script for new  App VM:📜
+## ***Creating a script for new  App VM:*** 📜
 
 [APP SCRIPT](./prov-app.sh)
 
-## Creating a script for new DB VM:📜
+## ***Creating a script for new DB VM:*** 📜
 
 [DB SCRIPT](./dbscript.sh)
 
   - You can use `sudo cat /var/log/cloud-init-output.log` to check log output for the script when you run it from user data
+
+## ***Virtual Machines and Images***
+  - [Virtual Machines and Images](/tech264-cloud-linux/scripting/Images-and-VMs.md)
+
+
+## ***How to connect the VM app after you stop it and start again - using  SSH key***
+ 
+1. Connect the `VM with SSH key`
+2. To see the `repo/app`- need to be in root directory  -> `cd /repo/app`
+3. Stop all processes -> `pm2 stop all`
+4. To start the app -> `sudo pm2 start app.js`
+ 

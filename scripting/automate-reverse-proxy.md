@@ -1,10 +1,11 @@
-# Automate a reverse proxy:
+# ***Automate a reverse proxy:***
 
-- [Automate a reverse proxy:](#automate-a-reverse-proxy)
-  - [Steps to Modify Nginx Configuration Using sed](#steps-to-modify-nginx-configuration-using-sed)
+- [***Automate a reverse proxy:***](#automate-a-reverse-proxy)
+  - [***Steps to Modify Nginx Configuration Using `sed`***](#steps-to-modify-nginx-configuration-using-sed)
+  - [***Relevant script***](#relevant-script)
 
 
-## Steps to Modify Nginx Configuration Using sed
+## ***Steps to Modify Nginx Configuration Using `sed`***
 1. Install Nginx: Ensure Nginx is installed.
 2. Backup Existing Configuration: It’s a good practice to back up the existing configuration before making changes.
 ```bash
@@ -19,4 +20,5 @@ sudo sed -i 's|try_files $uri $uri/ =404;|proxy_pass http://localhost:3000;|' /e
     - **`sudo nginx -t`** 
 2. Restart Nginx: Restart the Nginx service to apply changes.
    - **`sudo systemctl restart nginx`**
-  
+## ***Relevant script***
+   - [Automating reverse proxy script](/tech264-cloud-linux/scripting/automate-reverse-proxy.sh)

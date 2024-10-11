@@ -1,5 +1,5 @@
-# What is the cloud?
-- [What is the cloud?](#what-is-the-cloud)
+# ***What is the cloud?*** ☁️
+- [***What is the cloud?*** ☁️](#what-is-the-cloud-️)
   - [The term "cloud" in cloud computing refers to a network of remote servers hosted on the internet, rather than on a local server or personal computer.](#the-term-cloud-in-cloud-computing-refers-to-a-network-of-remote-servers-hosted-on-the-internet-rather-than-on-a-local-server-or-personal-computer)
       - [How do we know if something is in the cloud?](#how-do-we-know-if-something-is-in-the-cloud)
       - [Differences between on-prem and the cloud?](#differences-between-on-prem-and-the-cloud)
@@ -20,6 +20,7 @@
       - [What sorts of things do you usually need to pay for when using the cloud?](#what-sorts-of-things-do-you-usually-need-to-pay-for-when-using-the-cloud)
       - [What are the 4 pillars of DevOps? How do they link into the Cloud?](#what-are-the-4-pillars-of-devops-how-do-they-link-into-the-cloud)
       - [Find up to 3 case studies showing how businesses have migrated to the cloud or used the cloud to improve in some way?](#find-up-to-3-case-studies-showing-how-businesses-have-migrated-to-the-cloud-or-used-the-cloud-to-improve-in-some-way)
+  - [***Autoscaling***](#autoscaling)
 
 ## The term "cloud" in cloud computing refers to a network of remote servers hosted on the internet, rather than on a local server or personal computer.
  
@@ -222,3 +223,7 @@ However, organizations should evaluate their unique requirements, budget, and ex
 3. **General Electric (GE)**
    - **Migration**: Adopted a cloud-based IoT platform, Predix, on Microsoft Azure.
    - **Improvement**: Improved operational efficiency and predictive maintenance capabilities for industrial equipment, leading to reduced downtime and increased productivity.
+
+## ***Autoscaling***
+![alt text](/tech264-cloud-linux/cloud/images/Autoscaling.png)
+![alt text](/tech264-cloud-linux/cloud/images/Scaling%20types.png)
