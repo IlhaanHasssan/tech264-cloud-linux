@@ -25,11 +25,12 @@
 5. Continue creating your DB VM by selecting all the relevant choices (SSH (22) only, private subnet)
 6. In the ***Advanced*** tab when creating your DB VM, you should see *enable user data*, select that box and input your [DB script](/tech264-cloud-linux/scripting/dbscript.sh) into the box that appears
    - make sure your script inclues the she-bang
-7. Once, you have reviewed and created your VM, it should now run the script automatically, you can test user data has done it's job by SSH'ing into the VM and running **`sudo systemctl status mongod`**
+7. Once, you have reviewed and created your VM, it should now run the script automatically, you can test user data has done it's job by SSH'ing into the VM and running **`sudo systemctl status mongod`** and check the bindIP using ***`grep bindIp /etc/mongod.conf
+`***
    -   It will probably take a while to load so be patient.
 8. Repeat the same steps to create your app VM using the custom image and your [App script](/tech264-cloud-linux/scripting/prov-app.sh) (SSH (22), HTTP (80), public subnet)
    - make sure your ***DB_HOST*** variable has the correct ***private IP address***
-   - you can use ***`sudo cat /var/log/cloud-init-output.log
+   - you can use ***`sudo cat /var/log/cloud-init-output.log`***
  `*** to check the output logs in a git bash window when you SSH into your app VM
 9.  Your user data should work and you should be able to use the public IP address into a browser **(not chrome)**, you should see the app start page, when you enter ***/posts*** into the browser, you should also be able to see the posts page.
 
