@@ -21,4 +21,4 @@ sudo sed -i 's|try_files $uri $uri/ =404;|proxy_pass http://localhost:3000;|' /e
 2. Restart Nginx: Restart the Nginx service to apply changes.
    - **`sudo systemctl restart nginx`**
 ## ***Relevant script***
-   - [Automating reverse proxy script](/tech264-cloud-linux/scripting/automate-reverse-proxy.sh)
+   - [Automating reverse proxy script](/tech264-cloud-linux/scripting/reverse_proxies/automate-reverse-proxy.sh)

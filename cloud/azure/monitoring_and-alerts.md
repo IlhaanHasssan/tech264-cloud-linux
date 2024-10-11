@@ -1,8 +1,8 @@
-# **Monitoring**
-- [**Monitoring**](#monitoring)
+# ***Monitoring***
+- [***Monitoring***](#monitoring)
   - [***How to create a dashboard***](#how-to-create-a-dashboard)
   - [***How to increase CPU***](#how-to-increase-cpu)
-  - [***Load testing with Apache Bench***](#load-testing-with-apache-bench)
+  - [***Load testing with Apache Bench to create an unhealthy instance***](#load-testing-with-apache-bench-to-create-an-unhealthy-instance)
   
 ## ***How to create a dashboard***
  
@@ -12,7 +12,7 @@
 1. Select ***`Monitoring`***
 2. In the monitoring window, scroll down to ***`performance and utilization`*** -> ***`Platform metrics`***
 3. Pin the metrics that we need(e.g. CPU, Disk bytes, Network)
-4. Click ***`pin`***-> ***`create new`***-> select type(private/shared) -> ***`Dashboard name`***, ***`resource group`***->  then pin to the dashboard you have created in ***`Pin to dashboard - Existing`***
+4. Click ***`Pin`***-> ***`create new`***-> select type(private/shared) -> ***`Dashboard name`***, ***`resource group`***->  then pin to the dashboard you have created in ***`Pin to dashboard - Existing`***
 5. Search ***`Dashboard Hub`*** to view your dashboard, under ***`shared dashboards`***, and click into your dashboard under ***`go to dashboard`***
  
 ## ***How to increase CPU***
@@ -25,10 +25,10 @@ sudo apt-get install apache2-utils
 
    - you can also increase CPU by refreshing your page many times, though it will only increase slightly.
   
-## ***Load testing with Apache Bench***
+## ***Load testing with Apache Bench to create an unhealthy instance***
  
 ```bash
-ab -n 10000 -c 200 http://20.162.196.61/  # put your Public IP address/web page URL here.
+ab -n 10000 -c 200 http://<PublicIP>/  # put your Public IP address/web page URL here.
 # ab: This is the Apache Benchmark tool, which is used to test how many requests a web server can handle per second.
 
 # -n 10000: This specifies the total number of requests to perform. In this case, the tool will send 10,000 HTTP requests to the target server (http://20.162.196.61/).
@@ -37,3 +37,4 @@ ab -n 10000 -c 200 http://20.162.196.61/  # put your Public IP address/web page 
 
 # http://20.162.196.61/: This is the URL of the server being tested. In this case, it will make requests to the IP 20.162.196.61 on port 80 (the default HTTP port).
 ```
+

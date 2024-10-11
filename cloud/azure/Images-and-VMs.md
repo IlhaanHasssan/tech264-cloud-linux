@@ -49,6 +49,6 @@
 1. Select your custom DB image ***tech264-ilhaan-ready-to-run-DB-image***
 2. Select **create VM**
 3. Go through the steps to create your DB virtual machine listed here: [create a virtual machine](/tech264-cloud-linux/cloud/create_virtual_machine.md)
-4. Re-do the above steps to create a VM from your custom ***app image***
-5. ***Before*** you create your vm using your app image, insert your [run app script](/tech264-cloud-linux/scripting/run-app-only.sh) into user data
+4. Re-do the above steps to create a VM from your ***custom app image***
+5. ***Before*** you click ***create*** your vm using your app image, insert your [run app script](/tech264-cloud-linux/scripting/run-app-only.sh) into user data
 6. Check the public IP of your app VM to see if scripts are running correctly, you should be able to see the app home page and the */posts* page

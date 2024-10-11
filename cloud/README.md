@@ -225,5 +225,5 @@ However, organizations should evaluate their unique requirements, budget, and ex
    - **Improvement**: Improved operational efficiency and predictive maintenance capabilities for industrial equipment, leading to reduced downtime and increased productivity.
 
 ## ***Autoscaling***
-![alt text](/tech264-cloud-linux/cloud/images/Autoscaling.png)
-![alt text](/tech264-cloud-linux/cloud/images/Scaling%20types.png)
+![alt text](/tech264-cloud-linux/cloud/cloud-images/Autoscaling.png)
+![alt text](/tech264-cloud-linux/cloud/cloud-images/Scaling%20types.png)

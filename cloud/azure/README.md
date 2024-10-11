@@ -19,7 +19,7 @@ Azure Front Door has 192 edge locations in 109 metro cities, plus 4 edge locatio
 
 [Azure Regions and Availability Zones](https://holori.com/list-of-all-azure-regions-and/)
 
-![alt text](azure-regions-map.png)
+![alt text](/tech264-cloud-linux/cloud/azure/azure-images/azure-regions-map.png)
 
 ### How is Azure Structured/Organised? 📊
 Azure is organized into several key components:
