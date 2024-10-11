@@ -19,7 +19,7 @@
 
 ## ***How to create a VM from a custom image with user data:*** 🖼️
 1. Log into Azure Portal
-2. Select resource group from the home page, select *tech264*
+2. Select resource group from the home page, select ***tech264***
 3. Search for the custom image you would like to use - ***ramon-official-ubuntu2204-clean-image***
 4. click into the image, then select ***Create VM***, you should have image selected for you stating ***ramon-official-ubuntu2204-clean-image***
 5. Continue creating your DB VM by selecting all the relevant choices (SSH (22) only, private subnet)
@@ -28,7 +28,7 @@
 7. Once, you have reviewed and created your VM, it should now run the script automatically, you can test user data has done it's job by SSH'ing into the VM and running **`sudo systemctl status mongod`** and check the bindIP using ***`grep bindIp /etc/mongod.conf
 `***
    -   It will probably take a while to load so be patient.
-8. Repeat the same steps to create your app VM using the custom image and your [App script](/tech264-cloud-linux/scripting/prov-app.sh) (SSH (22), HTTP (80), public subnet)
+8. Repeat the same steps to create your app VM using the custom image and your [App script](/tech264-cloud-linux/scripting/prov-app.sh) *(SSH (22), HTTP (80), public subnet)*
    - make sure your ***DB_HOST*** variable has the correct ***private IP address***
    - you can use ***`sudo cat /var/log/cloud-init-output.log`***
  `*** to check the output logs in a git bash window when you SSH into your app VM
