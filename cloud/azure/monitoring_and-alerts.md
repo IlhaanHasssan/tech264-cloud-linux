@@ -10,10 +10,11 @@
     - [***Notifications***](#notifications)
     - [***Tags***](#tags)
     - [***Review and Create***](#review-and-create)
-  - [Remove dashboards and alert and action group](#remove-dashboards-and-alert-and-action-group)
-    - [Removing a Dashboard](#removing-a-dashboard)
-    - [Removing an Alert Rule](#removing-an-alert-rule)
-    - [Removing an Action Group](#removing-an-action-group)
+    - [***Alert Email***](#alert-email)
+  - [***Remove dashboards and alert and action group***](#remove-dashboards-and-alert-and-action-group)
+    - [***Removing a Dashboard***](#removing-a-dashboard)
+    - [***Removing an Alert Rule***](#removing-an-alert-rule)
+    - [***Removing an Action Group***](#removing-an-action-group)
   
 ## ***How to create a dashboard***
  
@@ -80,12 +81,13 @@ ab -n 10000 -c 200 http://<PublicIP>/  # put your Public IP address/web page URL
 1. **Ensure** you've selected the correct options.
 2. **Create** your shiny new alert rule.
 
+### ***Alert Email***
 ![](/tech264-cloud-linux/cloud/cloud-images/Alert-email.png)
 
    - once you have gone over the threshold, you should receive an email alerting you to this.
-## Remove dashboards and alert and action group
+## ***Remove dashboards and alert and action group***
 
-### Removing a Dashboard
+### ***Removing a Dashboard***
 1. Navigate to Dashboards:
    * In the Azure portal, click on “Dashboard” from the left-hand menu.
 2. Select the Dashboard:
@@ -94,7 +96,7 @@ ab -n 10000 -c 200 http://<PublicIP>/  # put your Public IP address/web page URL
    * Select “Delete” from the dropdown menu.
    * Confirm the deletion when prompted.#
  
-### Removing an Alert Rule
+### ***Removing an Alert Rule***
 1. Navigate to Azure Monitor:
    * In the Azure portal, go to “Monitoring” from the left-hand menu.
 2. Select Alerts:
@@ -105,7 +107,7 @@ ab -n 10000 -c 200 http://<PublicIP>/  # put your Public IP address/web page URL
    * Click on the three dots (ellipsis) next to the alert rule.
    * Select “Delete” and confirm the deletion.
  
-### Removing an Action Group
+### ***Removing an Action Group***
 1. Navigate to Azure Monitor:
    * In the Azure portal, go to “Monitoring”.
 2. Select Action Groups:

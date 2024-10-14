@@ -21,7 +21,7 @@
       - [What are the 4 pillars of DevOps? How do they link into the Cloud?](#what-are-the-4-pillars-of-devops-how-do-they-link-into-the-cloud)
       - [Find up to 3 case studies showing how businesses have migrated to the cloud or used the cloud to improve in some way?](#find-up-to-3-case-studies-showing-how-businesses-have-migrated-to-the-cloud-or-used-the-cloud-to-improve-in-some-way)
   - [***Autoscaling***](#autoscaling)
-    - [***Steps for Code-along with 3 subents***](#steps-for-code-along-with-3-subents)
+    - [***Steps for Code-along with 3 subnets***](#steps-for-code-along-with-3-subnets)
     - [***Architecture of a 3-subnet virtual network***](#architecture-of-a-3-subnet-virtual-network)
 
 ## The term "cloud" in cloud computing refers to a network of remote servers hosted on the internet, rather than on a local server or personal computer.
@@ -231,23 +231,23 @@ However, organizations should evaluate their unique requirements, budget, and ex
 ![alt text](/tech264-cloud-linux/cloud/cloud-images/Scaling%20types.png)
 
 
-### ***Steps for Code-along with 3 subents***
+### ***Steps for Code-along with 3 subnets***
 1. set up a new vnet - 3 subnet version
    1.  create 3 subnets and name then appropriately
    2.  give the addresses 10.0.2.0 for the public, 3 for the dmz and 4 for the private subnet
    3. for the private subnet enable the no outbound access - this mean whatever is in the subnet cannot access the internet
-  ![alt text](image.png)
+
    4. tag yourself as owner
    5. create
 2. Create db vm from image
    1. go to your ready-to-run-db image
    2. create a vm
-   3. name appropriately ![alt text](image-1.png)
+   3. name appropriately
    4. for availability- self select and db in zone 3
    5. allow ssh (for now)
    6. disk as normal
    7. networking - choose the right vnet and subnet, no public ip
-   ![alt text](image-3.png)
+
 3. Create the app vm from image
    1. go to your ready-to-run-app image
    2. create a vm
