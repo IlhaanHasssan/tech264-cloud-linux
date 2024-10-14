@@ -21,6 +21,8 @@
       - [What are the 4 pillars of DevOps? How do they link into the Cloud?](#what-are-the-4-pillars-of-devops-how-do-they-link-into-the-cloud)
       - [Find up to 3 case studies showing how businesses have migrated to the cloud or used the cloud to improve in some way?](#find-up-to-3-case-studies-showing-how-businesses-have-migrated-to-the-cloud-or-used-the-cloud-to-improve-in-some-way)
   - [***Autoscaling***](#autoscaling)
+    - [***Steps for Code-along with 3 subents***](#steps-for-code-along-with-3-subents)
+    - [***Architecture of a 3-subnet virtual network***](#architecture-of-a-3-subnet-virtual-network)
 
 ## The term "cloud" in cloud computing refers to a network of remote servers hosted on the internet, rather than on a local server or personal computer.
  
@@ -227,3 +229,59 @@ However, organizations should evaluate their unique requirements, budget, and ex
 ## ***Autoscaling***
 ![alt text](/tech264-cloud-linux/cloud/cloud-images/Autoscaling.png)
 ![alt text](/tech264-cloud-linux/cloud/cloud-images/Scaling%20types.png)
+
+
+### ***Steps for Code-along with 3 subents***
+1. set up a new vnet - 3 subnet version
+   1.  create 3 subnets and name then appropriately
+   2.  give the addresses 10.0.2.0 for the public, 3 for the dmz and 4 for the private subnet
+   3. for the private subnet enable the no outbound access - this mean whatever is in the subnet cannot access the internet
+  ![alt text](image.png)
+   4. tag yourself as owner
+   5. create
+2. Create db vm from image
+   1. go to your ready-to-run-db image
+   2. create a vm
+   3. name appropriately ![alt text](image-1.png)
+   4. for availability- self select and db in zone 3
+   5. allow ssh (for now)
+   6. disk as normal
+   7. networking - choose the right vnet and subnet, no public ip
+   ![alt text](image-3.png)
+3. Create the app vm from image
+   1. go to your ready-to-run-app image
+   2. create a vm
+   3. name
+   4. for availability- self select and db in zone 1
+   5. allow http and ssh
+   6. disk as normal
+   7. networking - choose the right vnet (3 subnet vnet) and subnet (public)
+4. Create NVA vm
+   1. create with ramons's clean image image
+   2. name
+   3. for availability- self select and db in zone 2
+   4. allow just ssh
+   5. disk as usual
+   6. networking - choose the right vnet (3 subnet vnet) and subnet (dmz)
+   7. give public ip (for now) to allow us to ssh in
+   8. no user data - can upgrade and update when we ssh in
+   9. create
+5. Set a ping (sends a packet regularly) to check the comms between the app and the db vms
+   1. ssh into the app vm
+   2. we want to ping the db vm ```ping 10.0.4.4``` ![ping command](/tech264-cloud-linux/cloud/cloud-images/ping%20command.png)
+   3. each message is the db replying and it also tells you how long the response takes (ctrl c/z to exit)
+   4. set up routing (using a routing table)
+   5. search route table on azure portal
+   6. Click create and select the correct resource group, location and give it an appropriate name
+   7. Ensure it is set to yes under `propogate gateway routes`
+   8. Add your tags, and click review and create!
+   9. Once it is created, navigate to the routes column on the right hand side, click the add+ button
+   10. Insert the correct IP address, hop type and hop type address, it should look like this:
+   ![](/tech264-cloud-linux/cloud/cloud-images/add-route-subnet.png)
+   11. Next, navigate below the `routes` section to the `subnets` section and click the `assoicate` button 
+   12. ![](/tech264-cloud-linux/cloud/cloud-images/associate-button.png)
+   13. Select the correct VNet and `public subnet`
+   
+
+### ***Architecture of a 3-subnet virtual network***
+![](/tech264-cloud-linux/cloud/cloud-images/tech264%20-%203%20subnets%20architecture.png)
