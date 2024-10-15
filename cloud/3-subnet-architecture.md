@@ -172,7 +172,7 @@ Now we need to associate the route table to where the traffic comes out of.
 ***Remember!** you need to update and upgrade on new VMs.*
  
 1. **SSH** into your **NVA**.
-2. Input `sysctl net.ipv4.ip_foward` to check if IP forwarding is enabled. If it reads **0**, it's false.
+2. Input `sysctl net.ipv4.ip_forward` to check if IP forwarding is enabled. If it reads **0**, it's false.
 3. Input `sudo nano /etc/sysctl.conf` to enter the config file where we can enable it.
 4. You will need to uncomment the line to enable it. Ensure you do the correct **IPv type**. In our case, it's **IPv4**.
   
@@ -214,7 +214,7 @@ We need a script that will contain the rules we're going to set. SSH into your N
 ## ***Set Network Security Group Rules***
 1. Navigate to your **DB virtual machine**.
 2. Go to **Network Settings** under **Networking**.
-3. Click the `tech264-kagan-in-3-subnet-vnet-vm-nsg` link next to **Network security group**.
+3. Click the `tech264-ilhaan-in-3-subnet-vnet-vm-nsg` link next to **Network security group**.
 4. Go to **inbound port rules** and click **Add**.
 5. Under **Source**, select **IP addresses**.
 6. Under **Source IP addresses/CIDR ranges**, input the **public subnet IP** `10.0.2.0/24`.
