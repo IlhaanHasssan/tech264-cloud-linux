@@ -8,7 +8,7 @@
     - [5. High Automation (Full Automation for Defined Processes)](#5-high-automation-full-automation-for-defined-processes)
     - [6. Autonomous Systems (Full Automation and Decision-Making)](#6-autonomous-systems-full-automation-and-decision-making)
     - [7. Cognitive Automation (AI-Driven Automation)](#7-cognitive-automation-ai-driven-automation)
-  - [Summary Table](#summary-table)
+  - [***Summary Table***](#summary-table)
 
 
 ## ***Levels of automation***
@@ -107,7 +107,7 @@
 
 ---
 
-## Summary Table
+## ***Summary Table***
 
 | Level                | Description                                                         | Human Involvement   |
 |----------------------|---------------------------------------------------------------------|---------------------|

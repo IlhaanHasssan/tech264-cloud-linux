@@ -53,7 +53,7 @@ An **Availability Zone** is a high-availability offering from cloud providers (l
 
 1. **Higher Resilience**: Unlike availability sets, which are limited to a single data center, availability zones provide protection against both local hardware failures and entire data center outages.
    
-2. **99.99% SLA**: Azure offers a 99.99% uptime SLA for VMs distributed across multiple availability zones, providing greater reliability than availability sets.
+2. **99.99% SLA**: Azure offers a 99.99% uptime SLA (Service-level agreement: a guarantee between service provider and client, detaliling the service, the standards the provider must adhere to, and the metrics to measure performance) for VMs distributed across multiple availability zones, providing greater reliability than availability sets.
 
 3. **Geographic Redundancy**: Resources across multiple zones provide better disaster recovery and failover capabilities within a region, offering near-instant recovery if one zone fails.
 
