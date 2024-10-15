@@ -82,7 +82,7 @@ ab -n 10000 -c 200 http://<PublicIP>/  # put your Public IP address/web page URL
 2. **Create** your shiny new alert rule.
 
 ### ***Alert Email***
-![alt text](/tech264-cloud-linux/cloud/azure/azure-images/Alert_email.png)
+![alert email](/tech264-cloud-linux/cloud/azure/azure-images/Alert_email.png)
    - once you have gone over the threshold, you should receive an email alerting you to this.
 ## ***Remove dashboards and alert and action group***
 
