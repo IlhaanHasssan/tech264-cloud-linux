@@ -228,6 +228,9 @@ However, organizations should evaluate their unique requirements, budget, and ex
 
 ## ***Autoscaling***
 ![alt text](/tech264-cloud-linux/cloud/cloud-images/Autoscaling.png)
+
+<br>
+
 ![alt text](/tech264-cloud-linux/cloud/cloud-images/Scaling%20types.png)
 
 
@@ -281,6 +284,8 @@ However, organizations should evaluate their unique requirements, budget, and ex
    11. Next, navigate below the `routes` section to the `subnets` section and click the `assoicate` button 
    12. ![](/tech264-cloud-linux/cloud/cloud-images/associate-button.png)
    13. Select the correct VNet and `public subnet`
+   14. To make the ***`/posts`*** page work again, you can disassociate the route connecting the ***`public-subnet`*** to the ***`NVA-VM`***
+
    
 
 ### ***Architecture of a 3-subnet virtual network***

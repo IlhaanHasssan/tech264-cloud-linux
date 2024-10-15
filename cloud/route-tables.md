@@ -3,7 +3,7 @@
   - [***What is a route table?***](#what-is-a-route-table)
   - [***How to create a route table***](#how-to-create-a-route-table)
     - [***Review and Create***](#review-and-create)
-    - [Once it's created, navigate to the resource.](#once-its-created-navigate-to-the-resource)
+    - [***Navigate to the resource***](#navigate-to-the-resource)
 
 ## ***What is a route table?***
 ## ***How to create a route table***
@@ -17,7 +17,7 @@
 1. ***`Ensure`*** you've added the correct tags, ***`OWNER:ilhaan`***
 2. ***`Review&Create`*** your shiny new Route table.
  
-### Once it's created, navigate to the resource.
+### ***Navigate to the resource***
  
 7. Go to the ***`Settings`*** drop down.
 8. Click ***`Routes`***.
