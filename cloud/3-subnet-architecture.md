@@ -31,6 +31,7 @@
   - [***Creating IP Table Rules***](#creating-ip-table-rules)
   - [***Set Network Security Group Rules***](#set-network-security-group-rules)
   - [***Create a rule to deny everything else***](#create-a-rule-to-deny-everything-else)
+  - [***Restrict BindIP***](#restrict-bindip)
 ## ***What is a DMZ subent***
 
   - A DMZ (Demilitarized Zone) subnet** is a section of a network that is isolated from an organization's internal network but is accessible from external networks like the internet. It serves as a buffer zone between the public internet and the private internal network, offering an additional layer of security by segregating services that are exposed to the internet from the more sensitive internal network.
@@ -236,3 +237,15 @@ We need a script that will contain the rules we're going to set. SSH into your N
 3. Change the priority to `500`.
  
 *That's it! You've officially secured your app with a DMZ layer. Good stuff. Now delete it all.*
+
+| **Feature**          | **Route Tables**                                               | **IPTables**                                  | **NSG Rules**                                              |
+|----------------------|---------------------------------------------------------------|-----------------------------------------------|------------------------------------------------------------|
+| **Primary Function**  | Route traffic to the correct network segment.                 | Filter traffic based on IP, port, protocol.   | Allow or deny traffic to/from Azure resources.              |
+| **Where Used**        | Azure VNets, subnets, routers, gateways.                      | Linux VMs, Network Virtual Appliances (NVAs). | Azure resources (VMs, NICs, subnets).                      |
+| **Scope**             | Network-wide routing decisions.                               | Per-machine firewalling and packet control.   | Subnet or VM-level traffic filtering.                       |
+| **Traffic Control**   | Directs traffic based on destination IP.                      | Filters traffic based on IP, port, protocol (Layer 3 & 4). | Controls traffic based on IP, port, protocol (Layer 4).    |
+| **Typical Use Case**  | Routes traffic between subnets or to the internet.            | Allows or blocks traffic at the VM level (Linux). | Controls inbound/outbound traffic to Azure VMs or NICs.    |
+| **Example**           | Route traffic to DB subnet via NVA in DMZ.                    | Block all SSH traffic except from one IP.     | Allow HTTP traffic from the internet to a VM.               |
+
+
+## ***Restrict BindIP***

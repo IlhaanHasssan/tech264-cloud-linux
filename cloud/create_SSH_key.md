@@ -4,6 +4,13 @@
   - [***Steps to Create an SSH Key***](#steps-to-create-an-ssh-key)
   - [***Add your SSH key to Azure portal***](#add-your-ssh-key-to-azure-portal)
   - [***Security Settings for SSH Key in Azure Portal***](#security-settings-for-ssh-key-in-azure-portal)
+- [***Use SSH authentication with a repo in GitHub***](#use-ssh-authentication-with-a-repo-in-github)
+  - [](#)
+  - [***Step 1: Create SSH Key***](#step-1-create-ssh-key)
+  - [***Step 2: Register your key on GitHub (padlock)***](#step-2-register-your-key-on-github-padlock)
+  - [\*\*\*Step 3: ***Add a private key to SSH register***](#step-3-add-a-private-key-to-ssh-register)
+  - [***Step 4: Create a test repo on github***](#step-4-create-a-test-repo-on-github)
+  - [***Step 5: push changes to test repo***](#step-5-push-changes-to-test-repo)
 
 # ***SSH Key Generation and Usage***
 This guide outlines the steps to create and manage SSH keys, as well as how to add the public key to the Azure portal.
@@ -61,3 +68,51 @@ Your public key has been saved in /Users/<your_home_directory>/.ssh/tech264-ilha
 4. change SSH source from "Any" to "My IP Address"
 - Organisations usually use Bastion servers in production
 - In a low-use production server, you can deny access to avoid security risks. 
+# ***Use SSH authentication with a repo in GitHub***
+
+<br>
+---
+
+## ***Step 1: Create SSH Key***
+- outlined above 
+## ***Step 2: Register your key on GitHub (padlock)***
+1. Log into Github
+2. Click your profile picture and navigate to ***`settings`***
+3. Select ***`SSH and GPG Keys`***
+4. Select ***`Add SSH Key`***
+5. Name your key to refelct the name on your local machine, i.e: ***`tech264-test-ssh`***
+6. Do the ***`cat <key-name>.pub`*** command to paste your **public** key into the text box
+7. Add your key and it should refkect read and write access:
+![alt text](image-1.png)
+
+## ***Step 3: ***Add a private key to SSH register***
+1. In your git bash window, run this command and you should receive a process ID: 
+```bash
+eval `ssh-agent -s`
+```
+2. `ssh-add <key name>` to register your SSH key
+3. `ssh -T git@github.com` to check github can use your key
+4. It should look like this in your gitbash window: ![alt text](image.png)
+
+## ***Step 4: Create a test repo on github***
+4. Create a repo on github with the name `tech264-test-ssh`
+5. Cd into your github folder in a gitbash window
+6. Create a directory with the same name as your github repo: ***`mkdir tech264-test-ssh`***
+7. Cd into your new directory
+8. Run this command to create a README.md with some text: ***`echo "# test-ssh" >> README.md`***
+9. Initialise your new repo using `git init`
+
+## ***Step 5: push changes to test repo***
+10. Run the necessary commands to push into your new repo:
+```bash
+git add .
+git commit -m "readme added"
+git branch -M main
+git remote add origin git@github.com:IlhaanHasssan/tech264-test-ssh.git
+git push -u origin main
+```
+11. Delete the test app using `rm -rf tech264-test-ssh`
+12. This is because there is an `***easier***` way to connect your local directory to your github repo using the clone command
+13. Navigate to your GitHub repos
+14. Inside your repo, you should see a bright, green button named ***`code`***
+15. Use ***` git clone git@github.com:IlhaanHasssan/tech264-test-ssh.git`***
