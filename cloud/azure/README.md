@@ -99,4 +99,19 @@ az storage container create --account-name tech264ilhaanstorage --name testconta
 
 # shows a list of containers in my storage account
 az storage container list --account-name tech264ilhaanstorage --output table --auth-mode login
+
+
+az storage blob upload \
+    --account-name tech264ilhaanstorage \
+    --container-name testcontainer \
+    --name newname.txt \ #name of file in cloud 
+    --file text.txt \ # name of file you eish to upload
+    --auth-mode login
+
+# checks your cloud for list of blobs
+    az storage blob list \
+    --account-name tech264ilhaanstorage \
+    --container-name testcontainer \
+    --output table \
+    --auth-mode login
 ```
