@@ -2,7 +2,7 @@
 - [***3 SUBNET 2-TIER ARCHITECTURE***](#3-subnet-2-tier-architecture)
   - [***What is a DMZ subent***](#what-is-a-dmz-subent)
   - [***Why Use a DMZ Subnet?***](#why-use-a-dmz-subnet)
-  - [Typical DMZ Architecture](#typical-dmz-architecture)
+  - [***Typical DMZ Architecture***](#typical-dmz-architecture)
   - [***Re-create the 3-subnet architecture to make the database private***](#re-create-the-3-subnet-architecture-to-make-the-database-private)
   - [***Set up the Virtual Network***](#set-up-the-virtual-network)
     - [***Basics***](#basics)
@@ -21,6 +21,7 @@
     - [***Basics***](#basics-3)
     - [***Networking***](#networking-1)
     - [***Review and Create***](#review-and-create-3)
+  - [***Reconnecting your App and DB after using user data***](#reconnecting-your-app-and-db-after-using-user-data)
   - [***Route Tables***](#route-tables)
     - [***Review and Create***](#review-and-create-4)
     - [***Routes under Settings***](#routes-under-settings)
@@ -45,7 +46,7 @@
 3. **Traffic Segregation**:
    - A DMZ allows an organization to segment traffic types. Internet-facing services are kept separate from internal services, reducing the chances of a security breach spreading from public servers to internal assets.
 
-## Typical DMZ Architecture
+## ***Typical DMZ Architecture***
 
 - **Firewalls**:
    - There are usually two firewalls in a DMZ configuration:
@@ -58,7 +59,7 @@
      - Email servers
      - FTP servers
      - Application servers
-**
+
 
 
 ## ***Re-create the 3-subnet architecture to make the database private***
@@ -134,6 +135,14 @@ Now we create the VM for the Network Virtual Appliance (NVA). This performs netw
 ### ***Review and Create***
 1. **Ensure** you've selected the correct options.
 2. **Create** your shiny new NVA.
+
+
+## ***Reconnecting your App and DB after using user data***
+1. SSH into your app.
+2. Input `export "DB_HOST=mongodb://10.0.4.4:27017/posts"`.
+3. Input cd `/repo/app`
+4. Input `sudo -E pm2 start app`.
+   - the `-E` is used to preserve the user’s environment variables when running a command with `sudo`.
  
 ## ***Route Tables***
 Used to define how network traffic is directed within a network and between different networks.
