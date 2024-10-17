@@ -37,3 +37,8 @@
    <br>
    
 ![alt text](image-2.png)
+
+6. Once you have done this, you should be able to view your image on the Sparta Test App homepage
+<br>
+
+![alt text](image-3.png)
