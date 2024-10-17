@@ -1,5 +1,5 @@
-# ***Deploying App in 2-tier architecture on AWS***
-- [***Deploying App in 2-tier architecture on AWS***](#deploying-app-in-2-tier-architecture-on-aws)
+# ***Deploying App in 2-tier architecture on AWS***🌩️
+- [***Deploying App in 2-tier architecture on AWS***🌩️](#deploying-app-in-2-tier-architecture-on-aws️)
   - [***How to:***](#how-to)
     - [***App and OS image***](#app-and-os-image)
     - [***Instance Type***](#instance-type)
