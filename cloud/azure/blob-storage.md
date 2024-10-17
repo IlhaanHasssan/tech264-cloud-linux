@@ -30,7 +30,7 @@
 
 ## ***Adding a blob image to the Sparta Test App***
 1. Re-create the steps above and name your new storage account `ilhaanstoragecat` and your new container `catcontainer`
-2. Find a picture online of a cute cat and download it to your container using the ***`wget`*** command
+2. Find a picture online of a cute cat and download it to your container using the ***`wget`*** command and rename is using ***`wget -O newname.jpg <url>`***
 3. Enable anonymous access using the steps outlined above
 4. Once you open the URL of your cat picture in a new tab, you can copy the images url into the ***`index.ejs`*** file in the ***`repo/app/views`*** folder using ***`sudo nano index.ejs`***
 5. Replace the URL in the HTML ***`<img src = "caturl">`***
