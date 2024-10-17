@@ -5,6 +5,7 @@
   - [***Making your blob storage file public***](#making-your-blob-storage-file-public)
     - [***Check the Blob on the Azure Portal***](#check-the-blob-on-the-azure-portal)
     - [***To make it public***](#to-make-it-public)
+  - [***Adding a blob image to the Sparta Test App***](#adding-a-blob-image-to-the-sparta-test-app)
 
 ## ***Creating a Blob Storage VM***
 1. Create a VM using our app image named ***`tech264-ilhaan-blob-storage`*** and the instructions here[Create a VM](/tech264-cloud-linux/cloud/create_virtual_machine.md), then add the [run app script](/tech264-cloud-linux/scripting/run-app-only.sh) to user data when creating your VM (dont need the DB_HOST env variable as we are not running/creating a database VM)
@@ -25,3 +26,14 @@
 ![alt text](image-1.png)
 - Change access level > (left hand side) Data Storage > Containers > click on the container > change access to **`blob`** > click **`save`**.
 - refresh and now copy the link into your browser and you should be able to see the contents of your file
+
+
+## ***Adding a blob image to the Sparta Test App***
+1. Re-create the steps above and name your new storage account `ilhaanstoragecat` and your new container `catcontainer`
+2. Find a picture online of a cute cat and download it to your container using the ***`wget`*** command
+3. Enable anonymous access using the steps outlined above
+4. Once you open the URL of your cat picture in a new tab, you can copy the images url into the ***`index.ejs`*** file in the ***`repo/app/views`*** folder using ***`sudo nano index.ejs`***
+5. Replace the URL in the HTML ***`<img src = "caturl">`***
+   <br>
+   
+![alt text](image-2.png)
