@@ -148,3 +148,16 @@ eval `ssh-agent -s`
 6. Use `git remote -v` to check your new changes have saved properly
 7. Make some changes to a file in your repo and push them, it should push correctly and now using SSH
 
+- **An easier way to change from HTTPS to SSH**
+  - cd into your repo of choice
+  - remove the current remote url using ***`git remote remove origin`***
+  - check using ***`git remote -v`*** and you should have no output
+  - then add using the SSH link in your github repo from the bright, green code button using ***`git remote add <repo-github-link>`***
+  - then set the remote url using ***`git remote set-url origin git@github.com:username/repository.git`***
+  - then you should add, commit as normal and push your changes using ***`git push --set-upstream origin main`***
+  - run ***`git remote -v`*** again and it should show you 
+    - ***`origin  git@github.com:IlhaanHasssan/-tech264-test-git.git (fetch)`***
+    - ***`origin  git@github.com:IlhaanHasssan/-tech264-test-git.git (push)`***
+    - you can reverse this for SSH to HTTPS
+  <br>
+  ![alt text](image-3.png)
