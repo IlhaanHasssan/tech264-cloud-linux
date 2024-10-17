@@ -124,7 +124,7 @@ Document the steps as you go, you should produce a guide to setting up SSH keys 
 
 1. Use `git remote -v` to check if the repo is using HTTPS or SSH in your git initialised folder in the CLI.
 2. Use this command to change the repo from HTTPS to SSH `git remote set-url origin git@github.com:username/repository.git`
-3. Use this command:
+3. Use this command in your ***`.ssh/`*** folder:
 ```bash
 eval `ssh-agent -s`
 #ssh-agent is a background program (daemon) that manages your SSH keys. It holds your private keys in memory and uses them to authenticate with remote servers, such as GitHub, without requiring you to repeatedly enter your passphrase.
@@ -145,7 +145,7 @@ eval `ssh-agent -s`
 <br>
 ![alt text](image-2.png)
 
-6. Use `git remote -v` to check your new changes have saved properly
+6. You should now be back in your local directory: Use `git remote -v` to check your new changes have saved properly
 7. Make some changes to a file in your repo and push them, it should push correctly and now using SSH
 
 - **An easier way to change from HTTPS to SSH**
