@@ -33,9 +33,12 @@
 1. Select **create security group**. Remember, you need a **UNIQUE** security group name for each VM, i.e: ***`tech264-ilhaan-DB-SG`***
 2. Now you need to create inbound rules for your instances: allow **SSH** traffic for the **Database** EC2.
 <br>
+
 ![alt text](./image-4.png)
+
 1. Allow **SSH** & **HTTP** for **App** EC2.
 <br>
+
 ![alt text](./image-5.png)
 
 1. Create a new subnet. For the **Database**, make it **private**. For the **App**, make it **public**.
