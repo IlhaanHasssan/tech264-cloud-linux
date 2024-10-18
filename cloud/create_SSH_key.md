@@ -152,7 +152,7 @@ eval `ssh-agent -s`
   - cd into your repo of choice
   - remove the current remote url using ***`git remote remove origin`***
   - check using ***`git remote -v`*** and you should have no output
-  - then add using the SSH link in your github repo from the bright, green code button using ***`git remote add <repo-github-link>`***
+  - then add using the SSH link in your github repo from the bright, green code button using ***`git remote add origin <repo-github-link>`***
   - then set the remote url using ***`git remote set-url origin git@github.com:username/repository.git`***
   - then you should add, commit as normal and push your changes using ***`git push --set-upstream origin main`***
   - run ***`git remote -v`*** again and it should show you 
