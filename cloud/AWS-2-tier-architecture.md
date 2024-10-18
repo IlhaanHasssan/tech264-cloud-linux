@@ -51,7 +51,7 @@
  
 ### ***Advanced details***
 1. Locate user data and input the relative data for the **EC2**.
-2. This means the [app script](./scripting/prov-app.sh) and the [DB script](./scripting/dbscript.sh)
+2. This means the [app script](tech264-cloud-linux/scripting/prov-app.sh) and the [DB script](./scripting/dbscript.sh)
 3. Change the IP address in your app script **`DB-HOST`** variable to point towards your databases private IP Address
  
 ### **Review**
