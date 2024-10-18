@@ -55,7 +55,7 @@ The Azure Pricing Calculator helps users estimate the cost of Azure services bas
 - Make informed budgeting decisions for cloud resources.
 
 ## ***Downloading and using Azure CLI***
-- ***`curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash`*** - to install the Azure CLI
+- **`curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash`** - to install the Azure CLI
 - use ***`az --help`*** to see all the possible commands
 - ***`az login`*** It should give you a link with a code to sign into Azure CLI
   
@@ -119,4 +119,4 @@ az storage blob upload \
 
 
 ### ***Using a blob storage account***
-[All about Blob storage](/tech264-cloud-linux/cloud/azure/blob-storage.mds)
+[All about Blob storage](./blob-storage.md)

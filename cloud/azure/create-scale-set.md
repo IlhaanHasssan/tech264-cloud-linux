@@ -105,7 +105,7 @@ If you need to SSH into your first VM on the list:
  10. Your command should appear like this:
   ```bash
   ssh -i ~/.ssh/tech264-ilhaan-az-key -p 50000 adminuser@85.210.115.177
-  ```
+  ```z
 
 ## ***Testing the VM Scale Set***
 Verify Deployment: Ensure the VMSS is deployed successfully.
@@ -127,3 +127,4 @@ Load Balancer: Test the load balancer by accessing the application through its p
   - Delete VMSS: Select the VMSS and click on Delete.
   - Confirm Deletion: Confirm the deletion of the VMSS and all its associated resources:
     - Scale Set NIC (Network Interface Controller)
+

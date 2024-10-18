@@ -285,6 +285,12 @@ However, organizations should evaluate their unique requirements, budget, and ex
    12. ![](/tech264-cloud-linux/cloud/cloud-images/associate-button.png)
    13. Select the correct VNet and `public subnet`
    14. To make the ***`/posts`*** page work again, you can disassociate the route connecting the ***`public-subnet`*** to the ***`NVA-VM`***
+   15. Start your VMS again and re-run the [App script](/tech264-cloud-linux/scripting/run-app-only.sh) in the CLI of the app VM to get it working again 
+   16. You should be able to see the ***`home-page`*** and the ***`/posts`*** page running again after this step
+   17. Run the ***`ping <DB_private-subnet>`*** command and you should see the packets in the git bash window again
+   18. Re-associate the route in the route-table section of the azure portal.
+   19. The pings should stop now
+   20. Run 
 
    
 

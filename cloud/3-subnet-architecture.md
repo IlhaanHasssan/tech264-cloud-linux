@@ -196,7 +196,7 @@ We need a script that will contain the rules we're going to set. SSH into your N
 1. Create a file called `nano config-ip-tables.sh`, where will write the script.
 2. Write the script.
 
-[Config IP table script](/tech264-cloud-linux/cloud/config-ip-tables.sh) 
+[Config IP table script](./config-ip-tables.sh) 
 
 ***Sidenote! What these flags / options mean:***
  
@@ -238,6 +238,8 @@ We need a script that will contain the rules we're going to set. SSH into your N
  
 *That's it! You've officially secured your app with a DMZ layer. Good stuff. Now delete it all.*
 
+-----
+
 | **Feature**          | **Route Tables**                                               | **IPTables**                                  | **NSG Rules**                                              |
 |----------------------|---------------------------------------------------------------|-----------------------------------------------|------------------------------------------------------------|
 | **Primary Function**  | Route traffic to the correct network segment.                 | Filter traffic based on IP, port, protocol.   | Allow or deny traffic to/from Azure resources.              |
@@ -247,5 +249,6 @@ We need a script that will contain the rules we're going to set. SSH into your N
 | **Typical Use Case**  | Routes traffic between subnets or to the internet.            | Allows or blocks traffic at the VM level (Linux). | Controls inbound/outbound traffic to Azure VMs or NICs.    |
 | **Example**           | Route traffic to DB subnet via NVA in DMZ.                    | Block all SSH traffic except from one IP.     | Allow HTTP traffic from the internet to a VM.               |
 
+---
 
 ## ***Restrict BindIP***
