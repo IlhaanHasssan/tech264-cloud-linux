@@ -30,7 +30,7 @@
 1. Use an existing key.
  
 ### ***Network Settings***
-1. Select **create security group**. *Remember, you need a **UNIQUE** security group name for each VM, i.e: `tech264-ilhaan-DB-SG`*
+1. Select **create security group**. *Remember, you need a **UNIQUE** security group name for each VM, i.e: ***`tech264-ilhaan-DB-SG`***
 2. Now you need to create inbound rules for your instances: allow **SSH** traffic for the **Database** EC2.
 <br>
 ![alt text](image-4.png)
@@ -40,6 +40,7 @@
 
 2. Create a new subnet. For the **Database**, make it **private**. For the **App**, make it **public**.
 3. Edit IP for each one. Where in azure it was `10.0.1.0/24`, in AWS it is `172.31.1.0/24`. So you might want to use `172.31.2.0` for your **app**, and `172.31.3.0` for your **database**.
+   1. This is an **optional** step, app should work with default subnets in default vpc
  
 ### ***Add Inbound Port Rules (Can be done after launch)***
 1. Navigate to **Security Groups** under **Network and Security**.
