@@ -30,7 +30,7 @@
 1. Use an existing key.
  
 ### ***Network Settings***
-1. Select **create security group**. *Remember, you need a **UNIQUE** security group name for each VM, i.e: ***`tech264-ilhaan-DB-SG`***
+1. Select **create security group**. Remember, you need a **UNIQUE** security group name for each VM, i.e: ***`tech264-ilhaan-DB-SG`***
 2. Now you need to create inbound rules for your instances: allow **SSH** traffic for the **Database** EC2.
 <br>
 ![alt text](image-4.png)
