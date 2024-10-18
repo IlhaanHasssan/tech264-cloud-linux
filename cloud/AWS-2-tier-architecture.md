@@ -33,13 +33,13 @@
 1. Select **create security group**. Remember, you need a **UNIQUE** security group name for each VM, i.e: ***`tech264-ilhaan-DB-SG`***
 2. Now you need to create inbound rules for your instances: allow **SSH** traffic for the **Database** EC2.
 <br>
-![alt text](image-4.png)
+![alt text](./image-4.png)
 1. Allow **SSH** & **HTTP** for **App** EC2.
 <br>
-![alt text](image-5.png)
+![alt text](./image-5.png)
 
-2. Create a new subnet. For the **Database**, make it **private**. For the **App**, make it **public**.
-3. Edit IP for each one. Where in azure it was `10.0.1.0/24`, in AWS it is `172.31.1.0/24`. So you might want to use `172.31.2.0` for your **app**, and `172.31.3.0` for your **database**.
+1. Create a new subnet. For the **Database**, make it **private**. For the **App**, make it **public**.
+2. Edit IP for each one. Where in azure it was `10.0.1.0/24`, in AWS it is `172.31.1.0/24`. So you might want to use `172.31.2.0` for your **app**, and `172.31.3.0` for your **database**.
    1. This is an **optional** step, app should work with default subnets in default vpc
  
 ### ***Add Inbound Port Rules (Can be done after launch)***
@@ -51,7 +51,7 @@
  
 ### ***Advanced details***
 1. Locate user data and input the relative data for the **EC2**.
-2. This means the [app script](/tech264-cloud-linux/scripting/prov-app.sh) and the [DB script](/tech264-cloud-linux/scripting/dbscript.sh)
+2. This means the [app script](./scripting/prov-app.sh) and the [DB script](./scripting/dbscript.sh)
 3. Change the IP address in your app script **`DB-HOST`** variable to point towards your databases private IP Address
  
 ### **Review**
